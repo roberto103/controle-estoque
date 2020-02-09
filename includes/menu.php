@@ -48,13 +48,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/charts/flot.html" class="nav-link">
+              <a href="clientes.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Clientes</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/charts/inline.html" class="nav-link">
+              <a href="fornecedores.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Fornecedores</p>
               </a>

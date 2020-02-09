@@ -1,9 +1,9 @@
 <!-- /.content-wrapper -->
 <footer class="main-footer">
-  <strong>Copyright &copy; 2020 - <a href="http://adminlte.io">i9 Soft</a>.</strong>
+  <strong>Copyright &copy; 2020 - <a href="https://www.instagram.com/i9soft/">i9 Soft</a>.</strong>
   Todos os direitos reservados.
   <div class="float-right d-none d-sm-inline-block">
-    <b>Versão</b> 1.1
+    <!-- <b>Versão</b> 1.1 -->
   </div>
 </footer>
 

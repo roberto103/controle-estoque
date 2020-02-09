@@ -9,16 +9,16 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark" style="display: inline-block;">Produtos</h1>
+          <h1 class="m-0 text-dark" style="display: inline-block;">Usuários</h1>
 
-          <a href="novo_produto.php" class="btn btn-primary" style="margin-left: 10px; margin-top: -10px;">Novo Produto</a>
+          <a href="novo_user.php" class="btn btn-primary" style="margin-left: 10px; margin-top: -10px;">Novo Usuário</a>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item">
               <a href="/">Início</a>
             </li>
-            <li class="breadcrumb-item active">Produtos</li>
+            <li class="breadcrumb-item active">Usuários</li>
           </ol>
         </div>
       </div>
@@ -38,24 +38,16 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Modelo</th>
-                    <th>Fabricante</th>
-                    <th>Estado</th>
-                    <th>Quantidade</th>
-                    <th>Valor de compra</th>
-                    <th>Valor de venda</th>
+                    <th>Nome</th>
+                    <th>Email</th>
                     <th>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td>Redmi 8</td>
-                    <td>Xiaomi</td>
-                    <td>Novo</td>
-                    <td>190</td>
-                    <td>R$ 400,00</td>
-                    <td>R$ 500,00</td>
+                    <td>Roberto</td>
+                    <td>roberto@teste.com</td>
                     <td>
                       <a href="#" title="Editar">
                         <i class="fas fa-edit"></i>

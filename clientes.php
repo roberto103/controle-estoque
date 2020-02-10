@@ -9,9 +9,9 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark" style="display: inline-block;">Produtos</h1>
+          <h1 class="m-0 text-dark" style="display: inline-block;">Cliente</h1>
 
-          <button type="button" class="btn btn-primary" style="margin-left: 10px; margin-top: -10px;">Novo Produto</button>
+          <a href="novo_clientes.php" class="btn btn-primary" style="margin-left: 10px; margin-top: -10px;">Novo Cliente</a>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">

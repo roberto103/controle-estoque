@@ -44,6 +44,7 @@
                     <th>Quantidade</th>
                     <th>Valor de compra</th>
                     <th>Valor de venda</th>
+                    <th>IMAC</th>
                     <th>Ações</th>
                   </tr>
                 </thead>
@@ -56,6 +57,7 @@
                     <td>190</td>
                     <td>R$ 400,00</td>
                     <td>R$ 500,00</td>
+                    <td>87378732973</td>
                     <td>
                       <a href="#" title="Editar">
                         <i class="fas fa-edit"></i>

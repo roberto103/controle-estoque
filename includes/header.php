@@ -15,17 +15,17 @@
   <!-- DataTables -->
   <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.css">
   <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css"> -->
   <!-- JQVMap -->
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css"> -->
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"> -->
   <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css"> -->
   <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+  <!-- <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css"> -->
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -42,6 +42,10 @@
     border: 1px solid #ced4da;
     border-radius: .25rem;
     box-shadow: inset 0 0 0 transparent;
+  }
+
+  .sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active{
+    background-color: #ffc107;
   }
   </style>
 </head>

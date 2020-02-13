@@ -20,6 +20,15 @@
           </a>
         </li>
 
+        <li class="nav-item">
+          <a href="nova_venda.php" class="nav-link">
+            <i class="nav-icon fas fa-shopping-cart"></i>
+            <p>
+              Nova Venda
+            </p>
+          </a>
+        </li>
+
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-chart-pie"></i>

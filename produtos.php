@@ -2,6 +2,16 @@
 
 <?php include_once 'includes/menu.php'; ?>
 
+<?php
+
+require_once 'core/conexao.php';
+
+$sql = $pdo->prepare('SELECT * FROM produtos');
+$sql->execute();
+$registros = $sql->fetchAll(PDO::FETCH_OBJ);
+
+?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -45,28 +55,34 @@
                     <th>Valor de compra</th>
                     <th>Valor de venda</th>
                     <th>IMAC</th>
+                    <th>Nº de Série</th>
                     <th>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Redmi 8</td>
-                    <td>Xiaomi</td>
-                    <td>Novo</td>
-                    <td>190</td>
-                    <td>R$ 400,00</td>
-                    <td>R$ 500,00</td>
-                    <td>87378732973</td>
-                    <td>
-                      <a href="#" title="Editar">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                      <a href="#" title="Excluir">
-                        <i class="fas fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
+
+                  <?php foreach ($registros as $produtos): ?>
+                    <tr>
+                      <td><?php echo $produtos->id; ?></td>
+                      <td><?php echo $produtos->modelo; ?></td>
+                      <td><?php echo $produtos->fabricante; ?></td>
+                      <td><?php echo $produtos->estado_produtos; ?></td>
+                      <td><?php echo $produtos->uantidade; ?></td>
+                      <td><?php echo $produtos->valor_compra; ?></td>
+                      <td><?php echo $produtos->valor_venda; ?></td>
+                      <td><?php echo $produtos->imac; ?></td>
+                      <td><?php echo $produtos->numero_serie; ?></td>
+                      <td class="text-center">
+                        <a href="core/editar?id=<?php echo $usuarios->id; ?>" title="Editar" style="font-size: 20px;">
+                          <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="core/deletar?id=<?php echo $usuarios->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">
+                          <i class="fas fa-trash"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  <?php endforeach; ?>
+
                 </tbody>
               </table>
             </div>

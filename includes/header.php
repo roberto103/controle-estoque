@@ -1,3 +1,14 @@
+<?php
+
+require_once 'core/conexao.php';
+require_once 'core/Sessao.php';
+
+if (!Sessao::estaLogado()) {
+  header('Location: login.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,6 +77,11 @@
 
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="core/Deslogar.php" title="Deslogar">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- /.navbar -->

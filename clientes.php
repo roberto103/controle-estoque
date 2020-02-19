@@ -2,6 +2,16 @@
 
 <?php include_once 'includes/menu.php'; ?>
 
+<?php
+
+require_once 'core/conexao.php';
+
+$sql = $pdo->prepare('SELECT * FROM clientes');
+$sql->execute();
+$registros = $sql->fetchAll(PDO::FETCH_OBJ);
+
+?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -43,28 +53,32 @@
                     <th>Inicio da fidelidade</th>
                     <th>Cidade</th>
                     <th>Bairro</th>
-                    <th>Logardouro</th>
+                    <th>Rua</th>
                     <th>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>José Roberto</td>
-                    <td>17/05/2000</td>
-                    <td>09/02/2020</td>
-                    <td>Surubim</td>
-                    <td>São José</td>
-                    <td>Rua das pedra</td>
-                    <td>
-                      <a href="#" title="Editar">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                      <a href="#" title="Excluir">
-                        <i class="fas fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
+
+                  <?php foreach ($registros as $clientes): ?>
+                    <tr>
+                      <td><?php echo $clientes->id; ?></td>
+                      <td><?php echo $clientes->nome; ?></td>
+                      <td><?php echo $clientes->data_nascimento; ?></td>
+                      <td><?php echo $clientes->inicio_fidelidade; ?></td>
+                      <td><?php echo $clientes->cidade; ?></td>
+                      <td><?php echo $clientes->bairro; ?></td>
+                      <td><?php echo $clientes->rua; ?></td>
+                      <td class="text-center">
+                        <a href="core/editar?id=<?php echo $usuarios->id; ?>" title="Editar" style="font-size: 20px;">
+                          <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="core/deletar?id=<?php echo $usuarios->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">
+                          <i class="fas fa-trash"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  <?php endforeach; ?>
+
                 </tbody>
               </table>
             </div>

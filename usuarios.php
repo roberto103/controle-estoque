@@ -2,6 +2,16 @@
 
 <?php include_once 'includes/menu.php'; ?>
 
+<?php
+
+require_once 'core/conexao.php';
+
+$sql = $pdo->prepare('SELECT * FROM usuarios');
+$sql->execute();
+$registros = $sql->fetchAll(PDO::FETCH_OBJ);
+
+?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -44,19 +54,23 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Roberto</td>
-                    <td>roberto@teste.com</td>
-                    <td>
-                      <a href="#" title="Editar">
-                        <i class="fas fa-edit"></i>
-                      </a>
-                      <a href="#" title="Excluir">
-                        <i class="fas fa-trash"></i>
-                      </a>
-                    </td>
-                  </tr>
+
+                  <?php foreach ($registros as $usuarios): ?>
+                    <tr>
+                      <td><?php echo $usuarios->id; ?></td>
+                      <td><?php echo $usuarios->nome; ?></td>
+                      <td><?php echo $usuarios->email; ?></td>
+                      <td class="text-center">
+                        <a href="core/editar?id=<?php echo $usuarios->id; ?>" title="Editar" style="font-size: 20px;">
+                          <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="core/deletar?id=<?php echo $usuarios->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">
+                          <i class="fas fa-trash"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  <?php endforeach; ?>
+
                 </tbody>
               </table>
             </div>

@@ -42,6 +42,12 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
 
       <div class="row">
         <div class="col-sm-12">
+
+          <?php if (isset($_SESSION['msg'])) {
+  					echo $_SESSION['msg'];
+  					unset($_SESSION['msg']);
+  				} ?>
+
           <div class="card">
             <div class="card-body">
               <table id="example2" class="table table-bordered table-hover">
@@ -49,12 +55,11 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                   <tr>
                     <th>ID</th>
                     <th>Modelo</th>
-                    <th>Fabricante</th>
                     <th>Estado</th>
                     <th>Quantidade</th>
                     <th>Valor de compra</th>
                     <th>Valor de venda</th>
-                    <th>IMAC</th>
+                    <th>IMEI</th>
                     <th>Nº de Série</th>
                     <th>Ações</th>
                   </tr>
@@ -65,18 +70,17 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                     <tr>
                       <td><?php echo $produtos->id; ?></td>
                       <td><?php echo $produtos->modelo; ?></td>
-                      <td><?php echo $produtos->fabricante; ?></td>
-                      <td><?php echo $produtos->estado_produtos; ?></td>
-                      <td><?php echo $produtos->uantidade; ?></td>
+                      <td><?php echo $produtos->estado_produto; ?></td>
+                      <td><?php echo $produtos->quantidade; ?></td>
                       <td><?php echo $produtos->valor_compra; ?></td>
                       <td><?php echo $produtos->valor_venda; ?></td>
-                      <td><?php echo $produtos->imac; ?></td>
+                      <td><?php echo $produtos->imei; ?></td>
                       <td><?php echo $produtos->numero_serie; ?></td>
                       <td class="text-center">
-                        <a href="core/editar?id=<?php echo $usuarios->id; ?>" title="Editar" style="font-size: 20px;">
+                        <a href="core/editar_produto.php?id=<?php echo $produtos->id; ?>" title="Editar" style="font-size: 20px;">
                           <i class="fas fa-edit"></i>
                         </a>
-                        <a href="core/deletar?id=<?php echo $usuarios->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">
+                        <a href="core/deletar_produto.php?id=<?php echo $produtos->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">
                           <i class="fas fa-trash"></i>
                         </a>
                       </td>

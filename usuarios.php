@@ -42,6 +42,12 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
 
       <div class="row">
         <div class="col-sm-12">
+
+          <?php if (isset($_SESSION['msg'])) {
+  					echo $_SESSION['msg'];
+  					unset($_SESSION['msg']);
+  				} ?>
+
           <div class="card">
             <div class="card-body">
               <table id="example2" class="table table-bordered table-hover">
@@ -50,6 +56,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Email</th>
+                    <th>Permissão</th>
                     <th>Ações</th>
                   </tr>
                 </thead>
@@ -60,11 +67,12 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                       <td><?php echo $usuarios->id; ?></td>
                       <td><?php echo $usuarios->nome; ?></td>
                       <td><?php echo $usuarios->email; ?></td>
+                      <td><?php echo $usuarios->permissao; ?></td>
                       <td class="text-center">
-                        <a href="core/editar?id=<?php echo $usuarios->id; ?>" title="Editar" style="font-size: 20px;">
+                        <a href="core/editar_usuario.php?id=<?php echo $usuarios->id; ?>" title="Editar" style="font-size: 20px;">
                           <i class="fas fa-edit"></i>
                         </a>
-                        <a href="core/deletar?id=<?php echo $usuarios->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">
+                        <a href="core/deletar_usuario.php?id=<?php echo $usuarios->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">
                           <i class="fas fa-trash"></i>
                         </a>
                       </td>

@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
 
 -- Copiando estrutura para tabela estoque.fornecedores
 CREATE TABLE IF NOT EXISTS `fornecedores` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `telefone` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
 
 -- Copiando estrutura para tabela estoque.produtos_vendidos
 CREATE TABLE IF NOT EXISTS `produtos_vendidos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `modelo` varchar(70) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `fabricante` varchar(70) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `estado_produto` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',

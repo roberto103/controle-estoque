@@ -27,7 +27,7 @@
   <!-- Main content -->
 
   <div class="container-fluid">
-    <form action="" method="POST">
+    <form action="core/salvar_clientes.php" method="POST">
       <div class="col-sm-8">
         <div class="row mb-3" style="margin-left:0.1%;">
           <label for="nome_cliente">Nome</label>
@@ -41,7 +41,7 @@
           </div>
           <div class="col">
             <label for="data_cliente">Inicio da fidelidade</label>
-            <input id="data_cliente" name="data_cliente" type="date" class="form-control" placeholder="Inicio da fidelidade">
+            <input id="data_cliente" name="inicio_fidelidade" type="date" class="form-control" placeholder="Inicio da fidelidade">
           </div>
         </div>
 

@@ -56,6 +56,12 @@
                 <p>Usuários</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="novo_fornecedor.php" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Fornecedor</p>
+              </a>
+            </li>
           </ul>
         </li>
 

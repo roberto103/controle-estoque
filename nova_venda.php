@@ -77,7 +77,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                       <td><?php echo $produtos->imei; ?></td>
                       <td><?php echo $produtos->numero_serie; ?></td>
                       <td class="text-center">
-                        <a class="btn btn-primary" href="core/deletar_produto.php?id=<?php echo $produtos->id; ?>" title="Realizar Venda">
+                        <a class="btn btn-primary" href="core/salvar_venda.php?id=<?php echo $produtos->id; ?>" title="Realizar Venda">
                           Vender
                         </a>
                       </td>

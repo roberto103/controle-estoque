@@ -4,8 +4,8 @@
 
 <?php
 
-$produto = $pdo->prepare('SELECT * FROM produtos WHERE id = :id ORDER BY id ASC');
-$produto->bindvalue(':id',$_GET['id']);
+$produto = $pdo->prepare('SELECT * FROM produtos WHERE id = :id');
+$produto->bindvalue(':id', $_GET['id']);
 $produto->execute();
 
 $produto = $produto->fetch(PDO::FETCH_OBJ);
@@ -35,14 +35,18 @@ $produto = $produto->fetch(PDO::FETCH_OBJ);
   <!-- /.content-header -->
 
   <!-- Main content -->
-
   <div class="container-fluid">
 
-    <form action="core/salvar_produto.php" method="POST">
+    <form action="core/atualizar_produto.php" method="POST">
       <div class="col-sm-8">
-        <div class="row mb-3" style="margin-left:0.1%;">
-          <label for="modelo_celular">Modelo</label>
-          <input id="modelo" name="modelo" type="text" class="form-control" placeholder="Modelo do produto" value="<?php echo $produto->modelo; ?>" required>
+
+        <input type="hidden" name="id" value="<?php echo $produto->id; ?>">
+
+        <div class="row mb-3">
+          <div class="col">
+            <label for="modelo_celular">Modelo</label>
+            <input id="modelo" name="modelo" type="text" class="form-control" placeholder="Modelo do produto" value="<?php echo $produto->modelo; ?>" required>
+          </div>
         </div>
 
         <div class="row mb-3">
@@ -72,9 +76,9 @@ $produto = $produto->fetch(PDO::FETCH_OBJ);
             <div class="form-group">
               <label>Estado</label>
               <select name="estado_produto" class="form-control">
-                <option value="novo">Novo</option>
-                <option value="seminovo">Seminovo</option>
-                <option value="usado">Usado</option>
+                <option value="Novo">Novo</option>
+                <option value="Seminovo">Seminovo</option>
+                <option value="Usado">Usado</option>
               </select>
             </div>
           </div>

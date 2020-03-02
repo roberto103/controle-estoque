@@ -59,7 +59,7 @@ $.widget.bridge('uibutton', $.ui.button)
 <script>
 
 $(document).ready(function(){
-  $("#contato_fornecedor").mask("(00) 0000-00009");
+  $(".phone").mask("(00) 0 0000-0000");
   $('.money').mask('000.000.000.000.000,00', {reverse: true});
   $('.money2').mask("#.##0,00", {reverse: true});
 });

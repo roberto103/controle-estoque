@@ -42,6 +42,12 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
 
       <div class="row">
         <div class="col-sm-12">
+
+          <?php if (isset($_SESSION['msg'])) {
+  					echo $_SESSION['msg'];
+  					unset($_SESSION['msg']);
+  				} ?>
+
           <div class="card">
             <div class="card-body">
               <table id="example2" class="table table-bordered table-hover">
@@ -59,7 +65,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                     <tr>
                       <td><?php echo $fornecedores->id; ?></td>
                       <td><?php echo $fornecedores->nome; ?></td>
-                      <td><?php echo $fornecedores->telefone; ?></td>
+                      <td><?php echo $fornecedores->contato; ?></td>
                       <td class="text-center">
                         <a href="editar_fornecedor.php?id=<?php echo $fornecedores->id; ?>" title="Editar" style="font-size: 20px;">
                           <i class="fas fa-edit"></i>

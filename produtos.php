@@ -74,7 +74,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                       <td><?php echo $produtos->quantidade; ?></td>
                       <td><?php echo $produtos->valor_compra; ?></td>
                       <td><?php echo $produtos->valor_venda; ?></td>
-                      <td><?php echo $produtos->imac; ?></td>
+                      <td><?php echo $produtos->imei; ?></td>
                       <td><?php echo $produtos->numero_serie; ?></td>
                       <td class="text-center">
                         <a href="editar_produto.php?id=<?php echo $produtos->id; ?>" title="Editar" style="font-size: 20px;">

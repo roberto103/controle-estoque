@@ -10,11 +10,6 @@ $sql = $pdo->prepare('SELECT * FROM clientes');
 $sql->execute();
 $registros = $sql->fetchAll(PDO::FETCH_OBJ);
 
-function dataTela($pData) {
-	$data_desinvertida = implode("/", array_reverse(explode("-", substr(trim($pData),0,10))));
-	return $data_desinvertida;
-}
-
 ?>
 
 <!-- Content Wrapper. Contains page content -->

@@ -2,6 +2,7 @@
 
 require_once 'core/conexao.php';
 require_once 'core/Sessao.php';
+require_once 'core/util.php';
 
 if (!Sessao::estaLogado()) {
   header('Location: login.php');

@@ -10,9 +10,13 @@ $clientes->execute();
 $linhas = $clientes->rowCount();
 
 // Quantidade de produtos Vendidos
+$sql = $pdo->prepare('SELECT * FROM produtos_vendidos');
+$sql->execute();
+$produtos_vendidos = $sql->rowCount();
+
+// Quantidade de produtos Vendidos
 $vendas = $pdo->prepare('SELECT SUM(lucro) AS lucro FROM produtos_vendidos');
 $vendas->execute();
-$produtos_vendidos = $vendas->rowCount();
 $vendidos = $vendas->fetchAll(PDO::FETCH_OBJ);
 
 // Lucro dos produtos Vendidos

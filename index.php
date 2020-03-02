@@ -16,8 +16,9 @@ $user = $pdo->prepare('SELECT * FROM usuarios');
 $user->execute();
 $usuarios = $user->rowCount();
 
-$lucro = $pdo->prepare('SELECT SUM(valor_venda) AS lucro_total FROM produtos_vendidos');
-$lucro->execute();
+$valor_venda = $pdo->prepare('SELECT valor_venda FROM produtos_vendidos');
+$valor_venda->execute();
+$venda_total = $valor_venda->fetchAll(PDO::FETCH_OBJ);
 
  ?>
 
@@ -64,7 +65,7 @@ $lucro->execute();
             <div class="col-lg-3 col-6">
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>R$ 150<sup style="font-size: 20px"></sup></h3>
+                  <h3>R$ <?php echo $string; ?><sup style="font-size: 20px"></sup></h3>
 
                   <p>de lucro</p>
                 </div>

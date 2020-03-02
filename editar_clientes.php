@@ -10,7 +10,7 @@ $clientes->execute();
 
 $clientes = $clientes->fetch(PDO::FETCH_OBJ);
 
- ?>
+?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -35,13 +35,17 @@ $clientes = $clientes->fetch(PDO::FETCH_OBJ);
   <!-- /.content-header -->
 
   <!-- Main content -->
-
   <div class="container-fluid">
-    <form action="core/salvar_clientes.php" method="POST">
+    <form action="core/atualizar_clientes.php" method="POST">
       <div class="col-sm-8">
-        <div class="row mb-3" style="margin-left:0.1%;">
-          <label for="nome_cliente">Nome</label>
-          <input id="nome_cliente" name="nome_cliente" type="name" class="form-control" placeholder="Nome do cliente" value="<?php echo $clientes->nome; ?>" required>
+
+        <input type="hidden" name="id" value="<?php echo $clientes->id; ?>">
+
+        <div class="row mb-3">
+          <div class="col">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="name" class="form-control" placeholder="Nome do cliente" value="<?php echo $clientes->nome; ?>" required>
+          </div>
         </div>
 
         <div class="row mb-3">
@@ -57,21 +61,23 @@ $clientes = $clientes->fetch(PDO::FETCH_OBJ);
 
         <div class="row mb-3">
           <div class="col">
-            <label for="cidade_cliente">Cidade</label>
-            <input id="cidade_cliente" name="cidade_cliente" type="text" class="form-control" placeholder="Cidade" value="<?php echo $clientes->cidade; ?>" required>
+            <label for="cidade">Cidade</label>
+            <input id="cidade" name="cidade" type="text" class="form-control" placeholder="Cidade" value="<?php echo $clientes->cidade; ?>" required>
           </div>
           <div class="col">
-            <label for="bairro_cliente">Bairro</label>
-            <input id="bairro_cliente" name="bairro_cliente" type="text" class="form-control" placeholder="Bairro" value="<?php echo $clientes->bairro; ?>" required>
+            <label for="bairro">Bairro</label>
+            <input id="bairro" name="bairro" type="text" class="form-control" placeholder="Bairro" value="<?php echo $clientes->bairro; ?>" required>
           </div>
         </div>
 
-        <div class="row mb-3" style="margin-left:0.1%;">
-          <label for="logradouro_cliente">Logradouro</label>
-          <input id="logradouro_cliente" name="logradouro_cliente" type="text" class="form-control" placeholder="Rua do cliente" value="<?php echo $clientes->rua; ?>" required>
+        <div class="row mb-3">
+          <div class="col">
+            <label for="rua">Rua</label>
+            <input id="rua" name="rua" type="text" class="form-control" placeholder="Rua do cliente" value="<?php echo $clientes->rua; ?>" required>
+          </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Cadastrar cliente</button>
+        <button type="submit" class="btn btn-primary">Salvar alterações</button>
       </div>
     </form>
 

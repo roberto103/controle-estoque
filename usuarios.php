@@ -67,7 +67,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                       <td><?php echo $usuarios->id; ?></td>
                       <td><?php echo $usuarios->nome; ?></td>
                       <td><?php echo $usuarios->email; ?></td>
-                      <td><?php echo $usuarios->funcao; ?></td>
+                      <td><?php echo $usuarios->permissao; ?></td>
                       <td class="text-center">
                         <a href="editar_user.php?id=<?php echo $usuarios->id; ?>" title="Editar" style="font-size: 20px;">
                           <i class="fas fa-edit"></i>

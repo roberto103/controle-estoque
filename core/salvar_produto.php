@@ -1,10 +1,11 @@
 <?php
 
 require_once 'conexao.php';
+require_once 'util.php';
 
 $modelo = $_POST['modelo'];
-$valor_compra = $_POST['valor_compra'];
-$valor_venda = $_POST['valor_venda'];
+$valor_compra = decimalBanco($_POST['valor_compra']);
+$valor_venda = decimalBanco($_POST['valor_venda']);
 $imei = $_POST['imei'];
 $numero_serie = $_POST['numero_serie'];
 $imei = $_POST['imei'];
@@ -17,7 +18,7 @@ $salvar->bindValue(':estado_produto', $estado_produto);
 $salvar->bindValue(':quantidade', $quantidade);
 $salvar->bindValue(':valor_compra', $valor_compra);
 $salvar->bindValue(':valor_venda', $valor_venda);
-$salvar->bindValue(':imei', $imei);
+$salvar->bindValue(':imac', $imei);
 $salvar->bindValue(':numero_serie', $numero_serie);
 $result = $salvar->execute();
 

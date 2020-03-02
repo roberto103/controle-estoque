@@ -2,6 +2,25 @@
 
 <?php include_once 'includes/menu.php'; ?>
 
+<?php
+
+$clientes = $pdo->prepare('SELECT * FROM clientes');
+$clientes->execute();
+$linhas = $clientes->rowCount();
+
+$vendas = $pdo->prepare('SELECT * FROM produtos_vendidos');
+$vendas->execute();
+$produtos_vendido = $vendas->rowCount();
+
+$user = $pdo->prepare('SELECT * FROM usuarios');
+$user->execute();
+$usuarios = $user->rowCount();
+
+$lucro = $pdo->prepare('SELECT SUM(valor_venda) AS lucro_total FROM produtos_vendidos');
+$lucro->execute();
+
+ ?>
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -31,9 +50,9 @@
             <div class="col-lg-3 col-6">
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3><?php echo $produtos_vendido; ?></h3>
 
-                  <p>Novas vendas</p>
+                  <p>Vendas</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
@@ -45,7 +64,7 @@
             <div class="col-lg-3 col-6">
               <div class="small-box bg-success">
                 <div class="inner">
-                  <h3>R$ 534,00<sup style="font-size: 20px"></sup></h3>
+                  <h3>R$ 150<sup style="font-size: 20px"></sup></h3>
 
                   <p>de lucro</p>
                 </div>
@@ -59,7 +78,7 @@
             <div class="col-lg-3 col-6">
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>44</h3>
+                  <h3><?php echo $linhas; ?></h3>
 
                   <p>Clientes cadastrados</p>
                 </div>
@@ -73,12 +92,12 @@
             <div class="col-lg-3 col-6">
               <div class="small-box bg-danger">
                 <div class="inner">
-                  <h3>65</h3>
+                  <h3><?php echo $usuarios; ?></h3>
 
-                  <p>Vendas hoje</p>
+                  <p>Usuários</p>
                 </div>
                 <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
+                  <i class="ion ion-person"></i>
                 </div>
                 <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
               </div>

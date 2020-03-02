@@ -6,7 +6,7 @@
 
 require_once 'core/conexao.php';
 
-$sql = $pdo->prepare('SELECT * FROM clientes');
+$sql = $pdo->prepare('SELECT * FROM fornecedores');
 $sql->execute();
 $registros = $sql->fetchAll(PDO::FETCH_OBJ);
 
@@ -49,30 +49,22 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                   <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>Data de nascimento</th>
-                    <th>Inicio da fidelidade</th>
-                    <th>Cidade</th>
-                    <th>Bairro</th>
-                    <th>Rua</th>
-                    <th>Ações</th>
+                    <th>Telefone</th>
+                    <th>Ação</th>
                   </tr>
                 </thead>
                 <tbody>
 
-                  <?php foreach ($registros as $clientes): ?>
+                  <?php foreach ($registros as $fornecedores): ?>
                     <tr>
-                      <td><?php echo $clientes->id; ?></td>
-                      <td><?php echo $clientes->nome; ?></td>
-                      <td><?php echo $clientes->data_nascimento; ?></td>
-                      <td><?php echo $clientes->inicio_fidelidade; ?></td>
-                      <td><?php echo $clientes->cidade; ?></td>
-                      <td><?php echo $clientes->bairro; ?></td>
-                      <td><?php echo $clientes->rua; ?></td>
+                      <td><?php echo $fornecedores->id; ?></td>
+                      <td><?php echo $fornecedores->nome; ?></td>
+                      <td><?php echo $fornecedores->telefone; ?></td>
                       <td class="text-center">
-                        <a href="core/editar?id=<?php echo $usuarios->id; ?>" title="Editar" style="font-size: 20px;">
+                        <a href="editar_fornecedor.php?id=<?php echo $fornecedores->id; ?>" title="Editar" style="font-size: 20px;">
                           <i class="fas fa-edit"></i>
                         </a>
-                        <a href="core/deletar?id=<?php echo $usuarios->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">
+                        <a href="core/deletar?id=<?php echo $fornecedores->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">
                           <i class="fas fa-trash"></i>
                         </a>
                       </td>

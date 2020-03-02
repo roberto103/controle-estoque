@@ -2,6 +2,16 @@
 
 <?php include_once 'includes/menu.php'; ?>
 
+<?php
+
+$produto = $pdo->prepare('SELECT * FROM produtos WHERE id = :id ORDER BY id ASC');
+$produto->bindvalue(':id',$_GET['id']);
+$produto->execute();
+
+$produto = $produto->fetch(PDO::FETCH_OBJ);
+
+?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -9,7 +19,7 @@
     <div class="container-fluid">
       <div class="row mb-3">
         <div class="col-sm-6">
-          <h1>Cadastrar novo produto</h1>
+          <h1>Editar produto</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -32,28 +42,28 @@
       <div class="col-sm-8">
         <div class="row mb-3" style="margin-left:0.1%;">
           <label for="modelo_celular">Modelo</label>
-          <input id="modelo" name="modelo" type="text" class="form-control" placeholder="Modelo do produto" required>
+          <input id="modelo" name="modelo" type="text" class="form-control" placeholder="Modelo do produto" value="<?php echo $produto->modelo; ?>" required>
         </div>
 
         <div class="row mb-3">
           <div class="col">
             <label for="valor_compra">Preço de compra</label>
-            <input id="valor_compra" name="valor_compra" type="text" class="form-control money" placeholder="Preço de compra" required>
+            <input id="valor_compra" name="valor_compra" type="text" class="form-control money" placeholder="Preço de compra" value="<?php echo $produto->valor_compra; ?>" required>
           </div>
           <div class="col">
             <label for="valor_venda">Preço de venda</label>
-            <input id="valor_venda" name="valor_venda" type="text" class="form-control money" placeholder="Preço de venda" required>
+            <input id="valor_venda" name="valor_venda" type="text" class="form-control money" placeholder="Preço de venda" value="<?php echo $produto->valor_venda; ?>" required>
           </div>
         </div>
 
         <div class="row mb-3">
           <div class="col">
             <label for="imei">IMEI</label>
-            <input id="imei" name="imei" type="text" class="form-control" placeholder="IMEI" required>
+            <input id="imei" name="imei" type="text" class="form-control" placeholder="IMEI" value="<?php echo $produto->imac; ?>" required>
           </div>
           <div class="col">
             <label for="numero_serie">Número de Série</label>
-            <input id="numero_serie" name="numero_serie" type="text" class="form-control" placeholder="Número de Série" required>
+            <input id="numero_serie" name="numero_serie" type="text" class="form-control" placeholder="Número de Série" value="<?php echo $produto->numero_serie; ?>" required>
           </div>
         </div>
 
@@ -71,11 +81,11 @@
 
           <div class="col">
             <label for="quantidade_produto">Quantidade</label>
-            <input id="quantidade_produto" name="quantidade_produto" type="number" class="form-control" placeholder="Quantidade do produto" required>
+            <input id="quantidade_produto" name="quantidade_produto" type="number" class="form-control" placeholder="Quantidade do produto" value="<?php echo $produto->quantidade; ?>" required>
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Cadastrar produto</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
       </div>
     </form>
 

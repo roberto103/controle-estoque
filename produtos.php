@@ -74,10 +74,10 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                       <td><?php echo $produtos->quantidade; ?></td>
                       <td><?php echo $produtos->valor_compra; ?></td>
                       <td><?php echo $produtos->valor_venda; ?></td>
-                      <td><?php echo $produtos->imei; ?></td>
+                      <td><?php echo $produtos->imac; ?></td>
                       <td><?php echo $produtos->numero_serie; ?></td>
                       <td class="text-center">
-                        <a href="core/editar_produto.php?id=<?php echo $produtos->id; ?>" title="Editar" style="font-size: 20px;">
+                        <a href="editar_produto.php?id=<?php echo $produtos->id; ?>" title="Editar" style="font-size: 20px;">
                           <i class="fas fa-edit"></i>
                         </a>
                         <a href="core/deletar_produto.php?id=<?php echo $produtos->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">

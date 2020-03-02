@@ -75,7 +75,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                       <td><?php echo $clientes->bairro; ?></td>
                       <td><?php echo $clientes->rua; ?></td>
                       <td class="text-center">
-                        <a href="core/editar_cliente.php?id=<?php echo $clientes->id; ?>" title="Editar" style="font-size: 20px;">
+                        <a href="editar_clientes.php?id=<?php echo $clientes->id; ?>" title="Editar" style="font-size: 20px;">
                           <i class="fas fa-edit"></i>
                         </a>
                         <a href="core/deletar_cliente.php?id=<?php echo $clientes->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">

@@ -13,10 +13,9 @@ $produtos = $produto->fetch(PDO::FETCH_OBJ);
 $lucro = floatval($produtos->valor_venda) - floatval($produtos->valor_compra);
 
 // Salvar na tabela Produtos Vendidos
-$salvar = $pdo->prepare('INSERT INTO produtos_vendidos (modelo, estado_produto, quantidade_vendida, valor_compra, valor_venda, lucro, imei, numero_serie) VALUES (:modelo, :estado_produto, :quantidade_vendida, :valor_compra, :valor_venda, :lucro, :imei, :numero_serie)');
+$salvar = $pdo->prepare('INSERT INTO produtos_vendidos (modelo, estado_produto, valor_compra, valor_venda, lucro, imei, numero_serie) VALUES (:modelo, :estado_produto, :valor_compra, :valor_venda, :lucro, :imei, :numero_serie)');
 $salvar->bindValue(':modelo', $produtos->modelo);
 $salvar->bindValue(':estado_produto', $produtos->estado_produto);
-$salvar->bindValue(':quantidade_vendida', $produtos->quantidade);
 $salvar->bindValue(':valor_compra', $produtos->valor_compra);
 $salvar->bindValue(':valor_venda', $produtos->valor_venda);
 $salvar->bindValue(':lucro', $lucro);

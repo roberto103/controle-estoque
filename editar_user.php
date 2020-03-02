@@ -4,8 +4,8 @@
 
 <?php
 
-$usuarios = $pdo->prepare('SELECT * FROM usuarios WHERE id = :id ORDER BY id ASC');
-$usuarios->bindvalue(':id',$_GET['id']);
+$usuarios = $pdo->prepare('SELECT * FROM usuarios WHERE id = :id');
+$usuarios->bindvalue(':id', $_GET['id']);
 $usuarios->execute();
 
 $usuarios = $usuarios->fetch(PDO::FETCH_OBJ);
@@ -38,19 +38,22 @@ $usuarios = $usuarios->fetch(PDO::FETCH_OBJ);
 
     <div class="container-fluid">
 
-      <form action="core/salvar_usuarios.php" method="POST">
+      <form action="core/atualizar_usuarios.php" method="POST">
         <div class="col-sm-8">
-          <div class="row mb-3" style="margin-left:0.1%;">
+
+          <input type="hidden" name="id" value="<?php echo $usuarios->id; ?>">
+
+          <div class="row mb-3">
             <label for="nome_usuario">Nome</label>
             <input id="nome_usuario" name="nome" type="text" class="form-control" placeholder="Nome do usuário" value="<?php echo $usuarios->nome; ?>" required>
           </div>
 
-          <div class="row mb-3" style="margin-left:0.1%;">
+          <div class="row mb-3">
             <label for="email_usuario">Email</label>
             <input id="email_usuario" name="email" type="email" class="form-control" placeholder="Email" value="<?php echo $usuarios->email; ?>" required>
           </div>
 
-          <div class="row mb-3" style="margin-left:0.1%;">
+          <div class="row mb-3">
             <label for="senha_usuario">Senha</label>
             <input id="senha_usuario" name="senha" type="password" class="form-control" placeholder="Senha de login" value="<?php echo $usuarios->senha; ?>" required>
           </div>
@@ -60,8 +63,8 @@ $usuarios = $usuarios->fetch(PDO::FETCH_OBJ);
               <div class="form-group">
                 <label>Permissão do usuário</label>
                 <select name="permissao" class="form-control">
-                  <option value="admin">Administrador</option>
-                  <option value="funcionario">Funcionário</option>
+                  <option value="Admin">Administrador</option>
+                  <option value="Funcionario">Funcionário</option>
                 </select>
               </div>
             </div>

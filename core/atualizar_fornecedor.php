@@ -1,6 +1,7 @@
 <?php
 
 require_once 'conexao.php';
+session_start();
 
 $nome = $_POST['nome'];
 $contato = $_POST['contato'];
@@ -13,9 +14,10 @@ $salvar->bindValue(':id', $id);
 $result = $salvar->execute();
 
 if ($result) {
+  $_SESSION['msg'] = '<div class="alert alert-success" role="alert">Fornecedor atualizado com sucesso!</div>';
   header('Location: ../fornecedores.php');
 }else{
-  echo "<script>alert('Erro ao salvar no Banco de Dados.')</script>";
+  $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Falha ao tentar atualizar o fornecedor!</div>';
   header('Location: ../fornecedores.php');
 }
 

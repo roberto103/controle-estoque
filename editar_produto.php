@@ -59,7 +59,7 @@ $produto = $produto->fetch(PDO::FETCH_OBJ);
         <div class="row mb-3">
           <div class="col">
             <label for="imei">IMEI</label>
-            <input id="imei" name="imei" type="text" class="form-control" placeholder="IMEI" value="<?php echo $produto->imac; ?>" required>
+            <input id="imei" name="imei" type="text" class="form-control" placeholder="IMEI" value="<?php echo $produto->imei; ?>" required>
           </div>
           <div class="col">
             <label for="numero_serie">Número de Série</label>

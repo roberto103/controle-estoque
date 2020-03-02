@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Copiando dados para a tabela estoque.clientes: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela estoque.clientes: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
 INSERT INTO `clientes` (`id`, `nome`, `data_nascimento`, `inicio_fidelidade`, `cidade`, `bairro`, `rua`) VALUES
 	(1, 'asas', '2009-12-12', '2001-12-12', 'Surubim', 'RDA', 'a');
@@ -51,18 +51,15 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `modelo` varchar(70) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `estado_produto` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `quantidade` int(10) NOT NULL DEFAULT '0',
   `valor_compra` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `valor_venda` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `imei` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `numero_serie` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Copiando dados para a tabela estoque.produtos: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela estoque.produtos: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` (`id`, `modelo`, `estado_produto`, `quantidade`, `valor_compra`, `valor_venda`, `imei`, `numero_serie`) VALUES
-	(8, 'Teste', 'novo', 1, '233,33', '500,00', 'asdfgfds', '2323');
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela estoque.produtos_vendidos
@@ -70,19 +67,19 @@ CREATE TABLE IF NOT EXISTS `produtos_vendidos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `modelo` varchar(70) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `estado_produto` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `quantidade_vendida` int(10) NOT NULL DEFAULT '0',
   `valor_compra` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `valor_venda` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `lucro` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `numero_serie` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `imei` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Copiando dados para a tabela estoque.produtos_vendidos: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela estoque.produtos_vendidos: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `produtos_vendidos` DISABLE KEYS */;
-INSERT INTO `produtos_vendidos` (`id`, `modelo`, `estado_produto`, `quantidade_vendida`, `valor_compra`, `valor_venda`, `lucro`, `numero_serie`, `imei`) VALUES
-	(8, 'Teste', 'novo', 2, '450,50', '500,50', '50', '2323', 'asdfgfds');
+INSERT INTO `produtos_vendidos` (`id`, `modelo`, `estado_produto`, `valor_compra`, `valor_venda`, `lucro`, `numero_serie`, `imei`) VALUES
+	(8, 'Teste', 'novo', '450,50', '500,50', '50', '2323', 'asdfgfds'),
+	(9, 'teste', 'novo', '233,33', '500,00', '267', 'ihbhjghuj', 'asdfgfds');
 /*!40000 ALTER TABLE `produtos_vendidos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela estoque.usuarios

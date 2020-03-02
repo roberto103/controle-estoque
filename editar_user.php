@@ -19,14 +19,14 @@ $usuarios = $usuarios->fetch(PDO::FETCH_OBJ);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Cadastrar novo usuário</h1>
+            <h1>Editar Usuário</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">
                 <a href="/">Início</a>
               </li>
-              <li class="breadcrumb-item active">Cadastrar novo usuário</li>
+              <li class="breadcrumb-item active">Editar Usuário</li>
             </ol>
           </div>
         </div>
@@ -67,7 +67,7 @@ $usuarios = $usuarios->fetch(PDO::FETCH_OBJ);
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary">Cadastrar usuário</button>
+          <button type="submit" class="btn btn-primary">Salvar alterações</button>
         </div>
       </form>
 

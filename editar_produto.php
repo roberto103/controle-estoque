@@ -26,7 +26,7 @@ $produto = $produto->fetch(PDO::FETCH_OBJ);
             <li class="breadcrumb-item">
               <a href="/">Início</a>
             </li>
-            <li class="breadcrumb-item active">Cadastrar novo produto</li>
+            <li class="breadcrumb-item active">Editar produto</li>
           </ol>
         </div>
       </div>
@@ -80,7 +80,7 @@ $produto = $produto->fetch(PDO::FETCH_OBJ);
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <button type="submit" class="btn btn-primary">Salvar alterações</button>
       </div>
     </form>
 

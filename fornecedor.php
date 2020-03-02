@@ -19,16 +19,16 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark" style="display: inline-block;">Cliente</h1>
+          <h1 class="m-0 text-dark" style="display: inline-block;">Fornecedores</h1>
 
-          <a href="novo_clientes.php" class="btn btn-primary" style="margin-left: 10px; margin-top: -10px;">Novo Cliente</a>
+          <a href="novo_fornecedor.php" class="btn btn-primary" style="margin-left: 10px; margin-top: -10px;">Novo Fornecedor</a>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item">
               <a href="/">Início</a>
             </li>
-            <li class="breadcrumb-item active">Clientes</li>
+            <li class="breadcrumb-item active">Fornecedores</li>
           </ol>
         </div>
       </div>
@@ -64,7 +64,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                         <a href="editar_fornecedor.php?id=<?php echo $fornecedores->id; ?>" title="Editar" style="font-size: 20px;">
                           <i class="fas fa-edit"></i>
                         </a>
-                        <a href="core/deletar?id=<?php echo $fornecedores->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">
+                        <a href="core/deletar_fornecedor.php?id=<?php echo $fornecedores->id; ?>" title="Excluir" style="font-size: 20px; color: #ff0a21;">
                           <i class="fas fa-trash"></i>
                         </a>
                       </td>

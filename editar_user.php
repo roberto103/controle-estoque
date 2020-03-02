@@ -47,7 +47,7 @@ $usuarios = $usuarios->fetch(PDO::FETCH_OBJ);
 
           <div class="row mb-3" style="margin-left:0.1%;">
             <label for="email_usuario">Email</label>
-            <input id="email_usuario" name="email" type="email" class="form-control" placeholder="Email" value"<?php echo $usuarios->email; ?>" required>
+            <input id="email_usuario" name="email" type="email" class="form-control" placeholder="Email" value="<?php echo $usuarios->email; ?>" required>
           </div>
 
           <div class="row mb-3" style="margin-left:0.1%;">

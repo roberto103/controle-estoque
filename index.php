@@ -4,14 +4,22 @@
 
 <?php
 
+// Quantidade de clientes cadastrados
 $clientes = $pdo->prepare('SELECT * FROM clientes');
 $clientes->execute();
 $linhas = $clientes->rowCount();
 
+// Quantidade de produtos Vendidos
 $vendas = $pdo->prepare('SELECT * FROM produtos_vendidos');
 $vendas->execute();
-$produtos_vendido = $vendas->rowCount();
+$produtos_vendidos = $vendas->rowCount();
+$vendidos = $vendas->fetchAll(PDO::FETCH_OBJ);
 
+// Lucro dos produtos Vendidos
+foreach ($vendidos as $vendidos);
+$lucro = $vendidos->lucro;
+
+// Quantidade de usuários cadastrados
 $user = $pdo->prepare('SELECT * FROM usuarios');
 $user->execute();
 $usuarios = $user->rowCount();
@@ -47,7 +55,7 @@ $usuarios = $user->rowCount();
         <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
             <div class="inner">
-              <h3><?php echo $produtos_vendido; ?></h3>
+              <h3><?php echo $produtos_vendidos; ?></h3>
 
               <p>Vendas</p>
             </div>

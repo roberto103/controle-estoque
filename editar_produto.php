@@ -78,11 +78,6 @@ $produto = $produto->fetch(PDO::FETCH_OBJ);
               </select>
             </div>
           </div>
-
-          <div class="col">
-            <label for="quantidade_produto">Quantidade</label>
-            <input id="quantidade_produto" name="quantidade_produto" type="number" class="form-control" placeholder="Quantidade do produto" value="<?php echo $produto->quantidade; ?>" required>
-          </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Salvar</button>

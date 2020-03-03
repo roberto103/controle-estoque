@@ -10,7 +10,9 @@ $produto->execute();
 $produtos = $produto->fetch(PDO::FETCH_OBJ);
 
 // Calculo do lucro
-$lucro = floatval($produtos->valor_venda) - floatval($produtos->valor_compra);
+$lucro = intval($produtos->valor_venda) - intval($produtos->valor_compra);
+
+// Data da venda
 $data = date("Y-m-d H:i:s");
 
 // Salvar na tabela Produtos Vendidos

@@ -54,9 +54,9 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `imei` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `numero_serie` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Copiando dados para a tabela estoque.produtos: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela estoque.produtos: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 
@@ -70,16 +70,12 @@ CREATE TABLE IF NOT EXISTS `produtos_vendidos` (
   `lucro` float NOT NULL DEFAULT '0',
   `numero_serie` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `imei` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
-  `cliente` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
-  `vendedor` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `data` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Copiando dados para a tabela estoque.produtos_vendidos: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `produtos_vendidos` DISABLE KEYS */;
-INSERT INTO `produtos_vendidos` (`id`, `modelo`, `estado_produto`, `valor_compra`, `valor_venda`, `lucro`, `numero_serie`, `imei`, `cliente`, `vendedor`, `data`) VALUES
-	(1, 'iPhone XR 238GB', 'Novo', 20000, 40050, 20050, '111111111111111', 'asjdfhbdhub', 'Fernando', 'Rafael', '2020-03-04 09:09:22');
 /*!40000 ALTER TABLE `produtos_vendidos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela estoque.usuarios

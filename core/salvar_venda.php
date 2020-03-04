@@ -17,7 +17,7 @@ $lucro = $produtos->valor_venda - $produtos->valor_compra;
 $data = date("Y-m-d H:i:s");
 
 // Salvar na tabela Produtos Vendidos
-$salvar = $pdo->prepare('INSERT INTO produtos_vendidos (modelo, estado_produto, valor_compra, valor_venda, lucro, imei, numero_serie, cliente, vendedor, data) VALUES (:modelo, :estado_produto, :valor_compra, :valor_venda, :lucro, :imei, :numero_serie, :cliente, :vendedor, :data)');
+$salvar = $pdo->prepare('INSERT INTO produtos_vendidos (modelo, estado_produto, valor_compra, valor_venda, lucro, imei, numero_serie, data) VALUES (:modelo, :estado_produto, :valor_compra, :valor_venda, :lucro, :imei, :numero_serie, :data)');
 $salvar->bindValue(':modelo', $produtos->modelo);
 $salvar->bindValue(':estado_produto', $produtos->estado_produto);
 $salvar->bindValue(':valor_compra', $produtos->valor_compra);
@@ -25,8 +25,6 @@ $salvar->bindValue(':valor_venda', $produtos->valor_venda);
 $salvar->bindValue(':lucro', $lucro);
 $salvar->bindValue(':imei', $produtos->imei);
 $salvar->bindValue(':numero_serie', $produtos->numero_serie);
-$salvar->bindValue(':cliente', $_POST['cliente']);
-$salvar->bindValue(':vendedor', $_POST['vendedor']);
 $salvar->bindValue(':data', $data);
 $result = $salvar->execute();
 

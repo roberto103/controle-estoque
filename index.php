@@ -14,12 +14,11 @@ $sql = $pdo->prepare('SELECT * FROM produtos_vendidos');
 $sql->execute();
 $produtos_vendidos = $sql->rowCount();
 
-// Lucro produtos Vendidos
+// Lucro dos produtos Vendidos
 $vendas = $pdo->prepare('SELECT SUM(lucro) AS lucro FROM produtos_vendidos');
 $vendas->execute();
 $vendidos = $vendas->fetchAll(PDO::FETCH_OBJ);
 
-// Lucro dos produtos Vendidos
 foreach ($vendidos as $vendidos);
 $lucro = $vendidos->lucro;
 

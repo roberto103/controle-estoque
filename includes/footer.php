@@ -61,7 +61,6 @@ $.widget.bridge('uibutton', $.ui.button)
 $(document).ready(function(){
   $(".phone").mask("(00) 0 0000-0000");
   $('.money').mask('000.000.000.000.000,00', {reverse: true});
-  $('.money2').mask("#.##0,00", {reverse: true});
 });
 
   $(function () {

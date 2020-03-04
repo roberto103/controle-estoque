@@ -72,7 +72,7 @@ $usuarios = $user->rowCount();
         <div class="col-lg-3 col-6">
           <div class="small-box bg-success">
             <div class="inner">
-              <h3>R$ <?php echo $lucro; ?><sup style="font-size: 20px"></sup></h3>
+              <h3>R$ <?php echo decimalTela($lucro); ?><sup style="font-size: 20px"></sup></h3>
 
               <p>de lucro</p>
             </div>

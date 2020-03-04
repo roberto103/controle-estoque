@@ -70,8 +70,8 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                       <td><?php echo $produtos->id; ?></td>
                       <td><?php echo $produtos->modelo; ?></td>
                       <td><?php echo $produtos->estado_produto; ?></td>
-                      <td><?php echo $produtos->valor_compra; ?></td>
-                      <td><?php echo $produtos->valor_venda; ?></td>
+                      <td>R$ <?php echo decimalTela($produtos->valor_compra); ?></td>
+                      <td>R$ <?php echo decimalTela($produtos->valor_venda); ?></td>
                       <td><?php echo $produtos->imei; ?></td>
                       <td><?php echo $produtos->numero_serie; ?></td>
                       <td class="text-center">

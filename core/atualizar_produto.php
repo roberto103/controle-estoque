@@ -1,12 +1,13 @@
 <?php
 
 require_once 'conexao.php';
+require_once 'util.php';
 session_start();
 
 $id = $_POST['id'];
 $modelo = $_POST['modelo'];
-$valor_compra = $_POST['valor_compra'];
-$valor_venda = $_POST['valor_venda'];
+$valor_compra = decimalBanco($_POST['valor_compra']);
+$valor_venda = decimalBanco($_POST['valor_venda']);
 $imei = $_POST['imei'];
 $numero_serie = $_POST['numero_serie'];
 $estado_produto = $_POST['estado_produto'];

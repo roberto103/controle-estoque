@@ -4,8 +4,8 @@ require_once 'conexao.php';
 require_once 'util.php';
 
 $modelo = $_POST['modelo'];
-$valor_compra = $_POST['valor_compra'];
-$valor_venda = $_POST['valor_venda'];
+$valor_compra = decimalBanco($_POST['valor_compra']);
+$valor_venda = decimalBanco($_POST['valor_venda']);
 $imei = $_POST['imei'];
 $numero_serie = $_POST['numero_serie'];
 $imei = $_POST['imei'];

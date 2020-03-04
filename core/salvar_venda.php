@@ -2,6 +2,7 @@
 
 require_once 'conexao.php';
 require_once 'util.php';
+session_start();
 
 // Pega todos os dados do produto
 $produto = $pdo->prepare('SELECT * FROM produtos WHERE id = :id');
@@ -33,9 +34,9 @@ $deletar->bindValue(':id', $_GET['id']);
 $deletar->execute();
 
 if ($produtos && $result && $deletar) {
-  header('Location: ../produtos.php');
+  header('Location: ../index.php');
 }else{
-  echo "<script>alert('Erro ao realizar a venda!')</script>";
+  $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro ao salvar no Banco de Dados!</div>';
   header('Location: ../nova_venda.php');
 }
 

@@ -2,6 +2,7 @@
 
 require_once 'conexao.php';
 require_once 'util.php';
+session_start();
 
 $modelo = $_POST['modelo'];
 $valor_compra = decimalBanco($_POST['valor_compra']);
@@ -23,6 +24,7 @@ $result = $salvar->execute();
 if ($result) {
   header("Location: ../produtos.php");
 }else{
+  $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro ao salvar no Banco de Dados!</div>';
   header("Location: ../produtos.php");
 }
 ?>

@@ -1,6 +1,7 @@
 <?php
 
 require_once 'conexao.php';
+session_start();
 
 $nome = $_POST['nome'];
 $contato = $_POST['contato'];
@@ -13,7 +14,7 @@ $result = $salvar->execute();
 if ($result) {
   header('Location: ../fornecedores.php');
 }else{
-  echo "<script>alert('Erro ao salvar no Banco de Dados.')</script>";
+  $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro ao salvar no Banco de Dados!</div>';
   header('Location: ../fornecedores.php');
 }
 

@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `bairro` varchar(70) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `rua` varchar(150) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Copiando dados para a tabela estoque.clientes: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
   `nome` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `contato` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Copiando dados para a tabela estoque.fornecedores: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `fornecedores` DISABLE KEYS */;
@@ -49,14 +49,14 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `modelo` varchar(70) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `estado_produto` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `valor_compra` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
-  `valor_venda` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `valor_compra` float NOT NULL DEFAULT '0',
+  `valor_venda` float NOT NULL DEFAULT '0',
   `imei` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `numero_serie` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Copiando dados para a tabela estoque.produtos: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela estoque.produtos: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 
@@ -65,16 +65,16 @@ CREATE TABLE IF NOT EXISTS `produtos_vendidos` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `modelo` varchar(70) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `estado_produto` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `valor_compra` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
-  `valor_venda` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
-  `lucro` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
+  `valor_compra` float NOT NULL DEFAULT '0',
+  `valor_venda` float NOT NULL DEFAULT '0',
+  `lucro` float NOT NULL DEFAULT '0',
   `numero_serie` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `imei` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `data` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Copiando dados para a tabela estoque.produtos_vendidos: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela estoque.produtos_vendidos: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `produtos_vendidos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `produtos_vendidos` ENABLE KEYS */;
 

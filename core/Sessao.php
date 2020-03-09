@@ -71,6 +71,7 @@ abstract class Sessao
 			session_start();
 
 		    $_SESSION['email'] = $administrador->email;
+		    $_SESSION['nome'] = $administrador->nome;
 
 		    return true;
 		} else {

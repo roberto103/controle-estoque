@@ -6,7 +6,7 @@ session_start();
 
 // Pega todos os dados do produto
 $produto = $pdo->prepare('SELECT * FROM produtos WHERE id = :id');
-$produto->bindValue(':id', $_GET['id']);
+$produto->bindValue(':id', $_POST['id']);
 $produto->execute();
 $produtos = $produto->fetch(PDO::FETCH_OBJ);
 

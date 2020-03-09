@@ -10,6 +10,10 @@ $sql = $pdo->prepare('SELECT * FROM produtos');
 $sql->execute();
 $registros = $sql->fetchAll(PDO::FETCH_OBJ);
 
+$buscar = $pdo->prepare('SELECT * FROM clientes');
+$buscar->execute();
+$clientes = $buscar->fetchAll(PDO::FETCH_OBJ);
+
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -75,9 +79,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                       <td><?php echo $produtos->imei; ?></td>
                       <td><?php echo $produtos->numero_serie; ?></td>
                       <td class="text-center">
-                        <a class="btn btn-primary" href="core/salvar_venda.php?id=<?php echo $produtos->id; ?>" title="Realizar Venda">
-                          Vender
-                        </a>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal_vender" data-id="<?php echo $produtos->id; ?>">Vender</button>
                       </td>
                     </tr>
                   <?php endforeach; ?>
@@ -92,6 +94,44 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
 
     </div>
   </section>
+</div>
+
+<div class="modal" id="modal_vender" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar venda</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form action="core/salvar_venda.php" method="post">
+
+          <input type="hidden" id="id" name="id">
+          <input type="hidden" name="vendedor" value="<?php echo $_SESSION['nome']; ?>">
+
+          <div class="row mb-5 mt-4">
+            <div class="col">
+              <label>Selecione um cliente</label>
+              <select name="cliente" class="form-control">
+                <option disabled>Selecione um cliente</option>
+                <?php foreach ($clientes as $cliente): ?>
+                  <option value="<?php echo $cliente->nome; ?>"><?php echo $cliente->nome; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+          </div>
+
+          <hr>
+          <button type="submit" class="btn btn-success float-right">Confirmar Venda</button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <?php include_once 'includes/footer.php'; ?>

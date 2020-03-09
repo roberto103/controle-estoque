@@ -7,10 +7,6 @@
   </div>
 </footer>
 
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-  <!-- Control sidebar content goes here -->
-</aside>
 <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
@@ -38,13 +34,26 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="dist/js/demo.js"></script>
 
 <!-- page script -->
-<script>
+<script type="text/javascript">
 
+// Pega do botao e joga para campos no modal
+$(document).ready(function(){
+	$('#modal_vender').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget); // Botão que acionou o modal
+		var id = button.data('id'); // Extrai informação dos atributos data-*
+		var modal = $(this);
+
+		modal.find('#id').val(id);
+	});
+});
+
+// mascaras de telefone e moedas
 $(document).ready(function(){
   $(".phone").mask("(00) 0 0000-0000");
   $('.money').mask('000.000.000.000.000,00', {reverse: true});
 });
 
+// tradução dataTables
 $(function () {
   $('#example2').DataTable({
     "language": {

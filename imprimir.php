@@ -102,6 +102,8 @@ window.print();
             <div class="text-center mb-5">
               <span class="d-block mb-4">Assinatura do comprador:</span>
               <span>_________________________________________________</span>
+              <span class="d-block mb-4">Assinatura do vendedor:</span>
+              <span class="mt-4">_________________________________________________</span>
             </div>
           </div>
 
@@ -155,6 +157,8 @@ window.print();
 
             <div class="text-center">
               <span class="d-block mb-4">Assinatura do comprador:</span>
+              <span class="mt-4">_________________________________________________</span>
+              <span class="d-block mb-4">Assinatura do vendedor:</span>
               <span>_________________________________________________</span>
             </div>
           </div>

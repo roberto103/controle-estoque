@@ -32,7 +32,7 @@ $result = $salvar->execute();
 
 // Deleta o produto
 $deletar = $pdo->prepare('DELETE FROM produtos WHERE id = :id');
-$deletar->bindValue(':id', $_GET['id']);
+$deletar->bindValue(':id', $_POST['id']);
 $deletar->execute();
 
 if ($produtos && $result && $deletar) {

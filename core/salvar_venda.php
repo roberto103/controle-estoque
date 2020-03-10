@@ -9,7 +9,6 @@ $produto = $pdo->prepare('SELECT * FROM produtos WHERE id = :id');
 $produto->bindValue(':id', $_POST['id']);
 $produto->execute();
 $produtos = $produto->fetch(PDO::FETCH_OBJ);
-$id = $produtos->id;
 
 // Calculo do lucro
 $lucro = $produtos->valor_venda - $produtos->valor_compra;
@@ -30,6 +29,9 @@ $salvar->bindValue(':cliente', $_POST['cliente']);
 $salvar->bindValue(':vendedor', $_POST['vendedor']);
 $salvar->bindValue(':data', $data);
 $result = $salvar->execute();
+
+// Retorna o ID da última linha inserida
+$id = $pdo->lastInsertId();
 
 // Deleta o produto
 $deletar = $pdo->prepare('DELETE FROM produtos WHERE id = :id');

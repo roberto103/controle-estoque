@@ -5,6 +5,7 @@
 <?php
 
 require_once 'core/conexao.php';
+require_once 'core/Sessao.php';
 
 $sql = $pdo->prepare('SELECT * FROM produtos');
 $sql->execute();

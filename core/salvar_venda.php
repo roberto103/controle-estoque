@@ -9,6 +9,7 @@ $produto = $pdo->prepare('SELECT * FROM produtos WHERE id = :id');
 $produto->bindValue(':id', $_POST['id']);
 $produto->execute();
 $produtos = $produto->fetch(PDO::FETCH_OBJ);
+$id = $produtos->id;
 
 // Calculo do lucro
 $lucro = $produtos->valor_venda - $produtos->valor_compra;
@@ -36,7 +37,7 @@ $deletar->bindValue(':id', $_POST['id']);
 $deletar->execute();
 
 if ($produtos && $result && $deletar) {
-  header('Location: ../index.php');
+  header('Location: ../imprimir.php?id='.$id);
 }else{
   $_SESSION['msg'] = '<div class="alert alert-danger" role="alert">Erro ao salvar no Banco de Dados!</div>';
   header('Location: ../nova_venda.php');

@@ -26,10 +26,12 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `bairro` varchar(70) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `rua` varchar(150) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Copiando dados para a tabela estoque.clientes: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
+INSERT INTO `clientes` (`id`, `nome`, `data_nascimento`, `inicio_fidelidade`, `cidade`, `bairro`, `rua`) VALUES
+	(1, 'Teste', '2000-02-23', '2029-08-19', 'Surubim', 'RDA', 'Teste');
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela estoque.fornecedores
@@ -51,6 +53,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `estado_produto` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `valor_compra` float NOT NULL DEFAULT '0',
   `valor_venda` float NOT NULL DEFAULT '0',
+  `data_compra` date NOT NULL,
   `imei` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `numero_serie` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
@@ -72,14 +75,13 @@ CREATE TABLE IF NOT EXISTS `produtos_vendidos` (
   `imei` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `cliente` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   `vendedor` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
-  `data` datetime NOT NULL,
+  `data_compra` date NOT NULL,
+  `data_venda` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Copiando dados para a tabela estoque.produtos_vendidos: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela estoque.produtos_vendidos: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `produtos_vendidos` DISABLE KEYS */;
-INSERT INTO `produtos_vendidos` (`id`, `modelo`, `estado_produto`, `valor_compra`, `valor_venda`, `lucro`, `numero_serie`, `imei`, `cliente`, `vendedor`, `data`) VALUES
-	(1, 'iPhone XR 238GB', 'Novo', 20000, 40050, 20050, '111111111111111', 'asjdfhbdhub', 'Fernando', 'Rafael', '2020-03-04 09:09:22');
 /*!40000 ALTER TABLE `produtos_vendidos` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela estoque.usuarios

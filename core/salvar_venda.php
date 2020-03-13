@@ -14,10 +14,10 @@ $produtos = $produto->fetch(PDO::FETCH_OBJ);
 $lucro = $produtos->valor_venda - $produtos->valor_compra;
 
 // Data da venda
-$data = date("Y-m-d H:i:s");
+$data = date("Y-m-d");
 
 // Salvar na tabela Produtos Vendidos
-$salvar = $pdo->prepare('INSERT INTO produtos_vendidos (modelo, estado_produto, valor_compra, valor_venda, lucro, imei, numero_serie, cliente, vendedor, data) VALUES (:modelo, :estado_produto, :valor_compra, :valor_venda, :lucro, :imei, :numero_serie, :cliente, :vendedor, :data)');
+$salvar = $pdo->prepare('INSERT INTO produtos_vendidos (modelo, estado_produto, valor_compra, valor_venda, lucro, imei, numero_serie, cliente, vendedor, data_compra, data_venda) VALUES (:modelo, :estado_produto, :valor_compra, :valor_venda, :lucro, :imei, :numero_serie, :cliente, :vendedor, :data_compra, :data_venda)');
 $salvar->bindValue(':modelo', $produtos->modelo);
 $salvar->bindValue(':estado_produto', $produtos->estado_produto);
 $salvar->bindValue(':valor_compra', $produtos->valor_compra);
@@ -27,7 +27,8 @@ $salvar->bindValue(':imei', $produtos->imei);
 $salvar->bindValue(':numero_serie', $produtos->numero_serie);
 $salvar->bindValue(':cliente', $_POST['cliente']);
 $salvar->bindValue(':vendedor', $_POST['vendedor']);
-$salvar->bindValue(':data', $data);
+$salvar->bindValue(':data_compra', $produtos->data_compra);
+$salvar->bindValue(':data_venda', $data);
 $result = $salvar->execute();
 
 // Retorna o ID da última linha inserida

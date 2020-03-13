@@ -14,7 +14,7 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item">
-              <a href="/">Início</a>
+              <a href="/controle-estoque">Início</a>
             </li>
             <li class="breadcrumb-item active">Cadastrar novo produto</li>
           </ol>
@@ -25,7 +25,6 @@
   <!-- /.content-header -->
 
   <!-- Main content -->
-
   <div class="container-fluid">
 
     <form action="core/salvar_produto.php" method="POST">
@@ -34,6 +33,13 @@
           <div class="col">
             <label for="modelo_celular">Modelo</label>
             <input id="modelo" name="modelo" type="text" class="form-control" placeholder="Modelo do produto" required>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label for="data_compra">Data da compra</label>
+              <input id="data_compra" name="data_compra" type="date" class="form-control" placeholder="Data compra do produto" required>
+            </div>
           </div>
         </div>
 

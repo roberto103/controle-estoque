@@ -25,13 +25,11 @@ $clientes = $buscar->fetchAll(PDO::FETCH_OBJ);
       <div class="row mb-2">
         <div class="col-sm-6">
           <h1 class="m-0 text-dark" style="display: inline-block;">Realizar Venda</h1>
-
-          <!-- <a href="novo_produto.php" class="btn btn-primary" style="margin-left: 10px; margin-top: -10px;">Novo Produto</a> -->
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item">
-              <a href="/">Início</a>
+              <a href="/controle-estoque">Início</a>
             </li>
             <li class="breadcrumb-item active">Nova Venda</li>
           </ol>
@@ -65,6 +63,7 @@ $clientes = $buscar->fetchAll(PDO::FETCH_OBJ);
                     <th>Valor de venda</th>
                     <th>IMEI</th>
                     <th>Nº de Série</th>
+                    <th>Data da compra</th>
                     <th>Ações</th>
                   </tr>
                 </thead>
@@ -79,6 +78,7 @@ $clientes = $buscar->fetchAll(PDO::FETCH_OBJ);
                       <td>R$ <?php echo decimalTela($produtos->valor_venda); ?></td>
                       <td><?php echo $produtos->imei; ?></td>
                       <td><?php echo $produtos->numero_serie; ?></td>
+                      <td><?php echo dataTela($produtos->data_compra); ?></td>
                       <td class="text-center">
                         <button class="btn btn-primary" data-toggle="modal" data-target="#modal_vender" data-id="<?php echo $produtos->id; ?>">Vender</button>
                       </td>

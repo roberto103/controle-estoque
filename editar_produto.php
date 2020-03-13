@@ -47,6 +47,11 @@ $produto = $produto->fetch(PDO::FETCH_OBJ);
             <label for="modelo_celular">Modelo</label>
             <input id="modelo" name="modelo" type="text" class="form-control" placeholder="Modelo do produto" value="<?php echo $produto->modelo; ?>" required>
           </div>
+
+          <div class="col">
+            <label for="data_compra">Data da compra</label>
+            <input id="data_compra" name="data_compra" type="date" class="form-control" placeholder="Data da compra do produto" value="<?php echo $produto->data_compra; ?>" required>
+          </div>
         </div>
 
         <div class="row mb-3">

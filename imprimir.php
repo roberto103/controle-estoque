@@ -72,7 +72,7 @@ window.print();
               </div>
 
               <div class="col text-right" style="margin-bottom: 35px;">
-                <h5 class="d-block">Data: <?php echo dataHoraTela($registros->data); ?></h5>
+                <h5 class="d-block">Data da venda: <?php echo dataTela($registros->data_venda); ?></h5>
                 <h5 class="d-block">ID da venda: <?php echo $registros->id; ?></h5>
               </div>
             </div>
@@ -128,7 +128,7 @@ window.print();
               </div>
 
               <div class="col text-right" style="margin-bottom: 35px;">
-                <h5 class="d-block">Data: <?php echo dataHoraTela($registros->data); ?></h5>
+                <h5 class="d-block">Data da venda: <?php echo dataTela($registros->data_venda); ?></h5>
                 <h5 class="d-block">ID da venda: <?php echo $registros->id; ?></h5>
               </div>
             </div>

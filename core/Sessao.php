@@ -15,7 +15,7 @@ abstract class Sessao
 	{
 		session_start();
 
-		if (!isset($_SESSION['email']) && !isset($_SESSION['email_adm'])) {
+		if (!isset($_SESSION['email_funcionario']) && !isset($_SESSION['email_admin'])) {
 		    Sessao::logout();
 		    return false;
 		} else {
@@ -28,9 +28,9 @@ abstract class Sessao
 	{
 		session_start();
 
-	    $_SESSION['email'] = NULL;
+	    $_SESSION['email_funcionario'] = NULL;
 
-	    unset ($_SESSION['email']);
+	    unset ($_SESSION['email_funcionario']);
 
 	    session_destroy();
 	}

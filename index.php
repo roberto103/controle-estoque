@@ -59,7 +59,6 @@ $usuarios = $user->rowCount();
           <div class="small-box bg-info">
             <div class="inner">
               <h3><?php echo $produtos_vendidos; ?></h3>
-
               <p>Vendas</p>
             </div>
             <div class="icon">

@@ -1,10 +1,10 @@
 <?php
 
 require_once 'core/conexao.php';
-require_once 'core/Sessao.php';
 require_once 'core/util.php';
 
-if ($_SESSION['permissao'] != 'Admin') {
+session_start();
+if ($_SESSION['admin_logado'] == false) {
   header('Location: login.php');
 }
 

@@ -19,6 +19,7 @@ if ($logado) {
       $_SESSION['email_admin'] = $administrador->email;
       $_SESSION['nome'] = $administrador->nome;
       $_SESSION['permissao'] = $administrador->permissao;
+      $_SESSION['admin_logado'] = true;
 
       header('Location: ../index.php');
     break;
@@ -28,12 +29,9 @@ if ($logado) {
       $_SESSION['email_funcionario'] = $administrador->email;
       $_SESSION['nome'] = $administrador->nome;
       $_SESSION['permissao'] = $administrador->permissao;
+      $_SESSION['funcionario_logado'] = true;
 
       header('Location: ../funcionario/index.php');
-    break;
-
-    default:
-    // code...
     break;
   }
 

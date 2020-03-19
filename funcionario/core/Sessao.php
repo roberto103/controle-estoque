@@ -16,8 +16,8 @@ abstract class Sessao
 		session_start();
 
 		if (!isset($_SESSION['email_funcionario']) && !isset($_SESSION['email_admin'])) {
-		    Sessao::logout();
-		    return false;
+			Sessao::logout();
+			return false;
 		} else {
 			return true;
 		}
@@ -27,35 +27,32 @@ abstract class Sessao
 	static function logout()
 	{
 		session_start();
-
-	    $_SESSION['email_funcionario'] = NULL;
-
-	    unset ($_SESSION['email_funcionario']);
-
-	    session_destroy();
+		$_SESSION['funcionario_logado'] = NULL;
+		unset ($_SESSION['funcionario_logado']);
+		session_destroy();
 	}
 
 
 	static function login($login,$senha)
 	{
-	// $HOST = '127.0.0.1';
-	// $DBNAME = 'ticonnec_ranking';
-	// $USER = 'ticonnec_ranking';
-	// $PASSWORD = 'ticonnec_ranking';
+		// $HOST = '127.0.0.1';
+		// $DBNAME = 'ticonnec_ranking';
+		// $USER = 'ticonnec_ranking';
+		// $PASSWORD = 'ticonnec_ranking';
 
-	//SALT utilizado para adicionar segurança aos hashes
-	// $SALT = 'natasha';
+		//SALT utilizado para adicionar segurança aos hashes
+		// $SALT = 'natasha';
 
-	//Conexão com o BD
-	$pdo = new PDO("mysql:host=".HOST.";dbname=".DBNAME.";charset=utf8",
-		    	USER, PASSWORD);
+		//Conexão com o BD
+		$pdo = new PDO("mysql:host=".HOST.";dbname=".DBNAME.";charset=utf8",
+		USER, PASSWORD);
 
-    //Configura o PDO para gerar exceções e impedir o script de continuar.
-    //Transações serão rolled back automaticamente em caso de erro.
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		//Configura o PDO para gerar exceções e impedir o script de continuar.
+		//Transações serão rolled back automaticamente em caso de erro.
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    //Converte strings vazias para null
-    $pdo->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
+		//Converte strings vazias para null
+		$pdo->setAttribute(PDO::ATTR_ORACLE_NULLS, PDO::NULL_EMPTY_STRING);
 
 		$handler = $pdo->prepare('SELECT * FROM usuarios WHERE email=:email AND senha=:senha');
 
@@ -70,10 +67,10 @@ abstract class Sessao
 		{
 			session_start();
 
-		    $_SESSION['email'] = $administrador->email;
-		    $_SESSION['nome'] = $administrador->nome;
+			$_SESSION['email'] = $administrador->email;
+			$_SESSION['nome'] = $administrador->nome;
 
-		    return true;
+			return true;
 		} else {
 			Sessao::logout();
 			return false;

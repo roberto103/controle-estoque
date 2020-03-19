@@ -60,7 +60,7 @@ window.print();
             <!-- logo -->
             <div class="row mb-4">
               <div class="col">
-                <img src="img/logo.png" alt="BR iPhones" width="110px">
+                <img src="../img/logo.png" alt="BR iPhones" width="110px">
               </div>
             </div>
 
@@ -116,7 +116,7 @@ window.print();
             <!-- logo -->
             <div class="row mb-4">
               <div class="col">
-                <img src="img/logo.png" alt="BR iPhones" width="110px">
+                <img src="../img/logo.png" alt="BR iPhones" width="110px">
               </div>
             </div>
 

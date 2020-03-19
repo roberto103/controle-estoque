@@ -71,7 +71,6 @@ $usuarios = $user->rowCount();
       </div>
 
       <div class="row">
-
       </div>
 
     </div>

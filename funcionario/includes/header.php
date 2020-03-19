@@ -1,11 +1,11 @@
 <?php
 
 require_once 'core/conexao.php';
-require_once 'core/Sessao.php';
 require_once 'core/util.php';
 
-if (!isset($_SESSION['email_funcionario'])) {
-  header('Location: ../../login.php');
+session_start();
+if ($_SESSION['funcionario_logado'] == false) {
+  header('Location: ../login.php');
 }
 
 ?>
@@ -62,7 +62,7 @@ if (!isset($_SESSION['email_funcionario'])) {
           <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="/controle-estoque" class="nav-link">Início</a>
+          <a href="/controle-estoque/funcionario" class="nav-link">Início</a>
         </li>
       </ul>
 

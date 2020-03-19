@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Copiando dados para a tabela estoque.clientes: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela estoque.clientes: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
 INSERT INTO `clientes` (`id`, `nome`, `data_nascimento`, `inicio_fidelidade`, `cidade`, `bairro`, `rua`) VALUES
 	(1, 'Teste', '2000-02-23', '2029-08-19', 'Surubim', 'RDA', 'Teste');
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   `imei` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `numero_serie` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Copiando dados para a tabela estoque.produtos: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `produtos_vendidos` (
   `data_compra` date NOT NULL,
   `data_venda` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Copiando dados para a tabela estoque.produtos_vendidos: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `produtos_vendidos` DISABLE KEYS */;
@@ -92,12 +92,13 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `senha` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `permissao` varchar(70) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Copiando dados para a tabela estoque.usuarios: ~1 rows (aproximadamente)
+-- Copiando dados para a tabela estoque.usuarios: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `permissao`) VALUES
-	(4, 'Teste', 'teste@teste.com', 'teste', 'Admin');
+	(4, 'Teste', 'teste@teste.com', 'teste', 'Admin'),
+	(5, 'Usuário', 'usuario@teste.com', 'user', 'Funcionário');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

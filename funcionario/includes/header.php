@@ -4,8 +4,8 @@ require_once 'core/conexao.php';
 require_once 'core/Sessao.php';
 require_once 'core/util.php';
 
-if ($_SESSION['permissao'] != 'Admin') {
-  header('Location: login.php');
+if (!isset($_SESSION['email_funcionario'])) {
+  header('Location: ../../login.php');
 }
 
 ?>

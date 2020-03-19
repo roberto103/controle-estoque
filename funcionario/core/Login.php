@@ -29,7 +29,7 @@ if ($logado) {
       $_SESSION['nome'] = $administrador->nome;
       $_SESSION['permissao'] = $administrador->permissao;
 
-      header('Location: ../funcionario/index.php');
+      header('Location: ../index.php');
     break;
 
     default:

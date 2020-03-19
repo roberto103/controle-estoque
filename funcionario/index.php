@@ -41,7 +41,7 @@ $usuarios = $user->rowCount();
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item">
-              <a href="/controle-estoque">Início</a>
+              <a href="/controle-estoque/funcionario">Início</a>
             </li>
             <li class="breadcrumb-item active">Dashboard</li>
           </ol>
@@ -68,47 +68,6 @@ $usuarios = $user->rowCount();
           </div>
         </div>
 
-        <div class="col-lg-3 col-6">
-          <div class="small-box bg-success">
-            <div class="inner">
-              <h3>R$ <?php echo decimalTela($lucro); ?><sup style="font-size: 20px"></sup></h3>
-
-              <p>de lucro</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-6">
-          <div class="small-box bg-warning">
-            <div class="inner">
-              <h3><?php echo $linhas; ?></h3>
-
-              <p>Clientes cadastrados</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-6">
-          <div class="small-box bg-danger">
-            <div class="inner">
-              <h3><?php echo $usuarios; ?></h3>
-
-              <p>Usuários</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person"></i>
-            </div>
-            <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
       </div>
 
       <div class="row">

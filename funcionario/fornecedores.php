@@ -26,7 +26,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item">
-              <a href="/controle-estoque">Início</a>
+              <a href="<?php echo $_SERVER['HTTP_HOST']; ?>">Início</a>
             </li>
             <li class="breadcrumb-item active">Fornecedores</li>
           </ol>

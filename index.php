@@ -92,7 +92,7 @@ $usuarios = $user->rowCount();
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="clientes.php" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="lista_clientes.php" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
 

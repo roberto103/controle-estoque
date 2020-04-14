@@ -5,15 +5,10 @@
 <?php
 
 require_once 'core/conexao.php';
-require_once 'core/Sessao.php';
 
-$sql = $pdo->prepare('SELECT * FROM produtos');
+$sql = $pdo->prepare('SELECT * FROM produtos_vendidos');
 $sql->execute();
 $registros = $sql->fetchAll(PDO::FETCH_OBJ);
-
-$buscar = $pdo->prepare('SELECT * FROM clientes');
-$buscar->execute();
-$clientes = $buscar->fetchAll(PDO::FETCH_OBJ);
 
 ?>
 
@@ -24,14 +19,14 @@ $clientes = $buscar->fetchAll(PDO::FETCH_OBJ);
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark" style="display: inline-block;">Realizar Venda</h1>
+          <h1 class="m-0 text-dark" style="display: inline-block;">Histórico de Vendas</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item">
               <a href="<?php echo $_SERVER['HTTP_HOST']; ?>">Início</a>
             </li>
-            <li class="breadcrumb-item active">Nova Venda</li>
+            <li class="breadcrumb-item active">Histórico de Vendas</li>
           </ol>
         </div>
       </div>
@@ -64,7 +59,8 @@ $clientes = $buscar->fetchAll(PDO::FETCH_OBJ);
                     <th>IMEI</th>
                     <th>Nº de Série</th>
                     <th>Data da compra</th>
-                    <th>Ações</th>
+                    <th>Data da venda</th>
+                    <th>Vendedor</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -79,9 +75,8 @@ $clientes = $buscar->fetchAll(PDO::FETCH_OBJ);
                       <td><?php echo $produtos->imei; ?></td>
                       <td><?php echo $produtos->numero_serie; ?></td>
                       <td><?php echo dataTela($produtos->data_compra); ?></td>
-                      <td class="text-center">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal_vender" data-id="<?php echo $produtos->id; ?>">Vender</button>
-                      </td>
+                      <td><?php echo dataTela($produtos->data_venda); ?></td>
+                      <td><?php echo $produtos->vendedor; ?></td>
                     </tr>
                   <?php endforeach; ?>
 
@@ -95,44 +90,6 @@ $clientes = $buscar->fetchAll(PDO::FETCH_OBJ);
 
     </div>
   </section>
-</div>
-
-<div class="modal" id="modal_vender" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Confirmar venda</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
-      <div class="modal-body">
-        <form action="core/salvar_venda.php" method="post">
-
-          <input type="hidden" id="id" name="id">
-          <input type="hidden" name="vendedor" value="<?php echo $_SESSION['nome']; ?>">
-
-          <div class="row mb-5 mt-4">
-            <div class="col">
-              <label>Selecione um cliente</label>
-              <select name="cliente" class="form-control">
-                <option disabled>Selecione um cliente</option>
-                <?php foreach ($clientes as $cliente): ?>
-                  <option value="<?php echo $cliente->nome; ?>"><?php echo $cliente->nome; ?></option>
-                <?php endforeach; ?>
-              </select>
-            </div>
-          </div>
-
-          <hr>
-          <button type="submit" class="btn btn-success float-right">Confirmar Venda</button>
-
-        </form>
-      </div>
-
-    </div>
-  </div>
 </div>
 
 <?php include_once 'includes/footer.php'; ?>

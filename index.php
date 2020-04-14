@@ -41,7 +41,7 @@ $usuarios = $user->rowCount();
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item">
-              <a href="/controle-estoque">Início</a>
+              <a href="<?php echo $_SERVER['HTTP_HOST']; ?>">Início</a>
             </li>
             <li class="breadcrumb-item active">Dashboard</li>
           </ol>
@@ -64,7 +64,7 @@ $usuarios = $user->rowCount();
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="historico_vendas.php" class="small-box-footer">Mais informações <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
 

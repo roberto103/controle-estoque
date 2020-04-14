@@ -46,6 +46,10 @@ $clientes = $clientes->fetch(PDO::FETCH_OBJ);
             <label for="nome">Nome</label>
             <input id="nome" name="nome" type="name" class="form-control" placeholder="Nome do cliente" value="<?php echo $clientes->nome; ?>" required>
           </div>
+          <div class="col">
+            <label for="cpf">CPF</label>
+            <input id="cpf" name="cpf" type="text" class="cpf form-control" placeholder="CPF do cliente" value="<?php echo $clientes->cpf; ?>" required>
+          </div>
         </div>
 
         <div class="row mb-3">

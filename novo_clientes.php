@@ -29,9 +29,16 @@
   <div class="container-fluid">
     <form action="core/salvar_clientes.php" method="POST">
       <div class="col-sm-8">
-        <div class="row mb-3" style="margin-left:0.1%;">
-          <label for="nome_cliente">Nome</label>
-          <input id="nome_cliente" name="nome_cliente" type="name" class="form-control" placeholder="Nome do cliente">
+
+        <div class="row mb-3">
+          <div class="col">
+            <label for="nome_cliente">Nome</label>
+            <input id="nome_cliente" name="nome_cliente" type="name" class="form-control" placeholder="Nome do cliente">
+          </div>
+          <div class="col">
+            <label for="cpf">CPF</label>
+            <input id="cpf" name="cpf" type="text" class="cpf form-control" placeholder="CPF do cliente">
+          </div>
         </div>
 
         <div class="row mb-3">

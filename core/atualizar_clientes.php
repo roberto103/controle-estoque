@@ -5,14 +5,16 @@ session_start();
 
 $id = $_POST['id'];
 $nome = $_POST['nome'];
+$cpf = $_POST['cpf'];
 $data_nascimento = $_POST['data_nascimento'];
 $inicio_fidelidade = $_POST['inicio_fidelidade'];
 $cidade = $_POST['cidade'];
 $bairro = $_POST['bairro'];
 $rua = $_POST['rua'];
 
-$salvar = $pdo->prepare('UPDATE clientes SET nome = :nome, data_nascimento = :data_nascimento, inicio_fidelidade = :inicio_fidelidade, cidade = :cidade, bairro = :bairro, rua = :rua WHERE id = :id');
+$salvar = $pdo->prepare('UPDATE clientes SET nome = :nome, cpf = :cpf, data_nascimento = :data_nascimento, inicio_fidelidade = :inicio_fidelidade, cidade = :cidade, bairro = :bairro, rua = :rua WHERE id = :id');
 $salvar->bindValue(':nome', $nome);
+$salvar->bindValue(':cpf', $cpf);
 $salvar->bindValue(':data_nascimento', $data_nascimento);
 $salvar->bindValue(':inicio_fidelidade', $inicio_fidelidade);
 $salvar->bindValue(':cidade', $cidade);

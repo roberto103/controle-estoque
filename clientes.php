@@ -19,7 +19,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark" style="display: inline-block;">Cliente</h1>
+          <h1 class="m-0 text-dark" style="display: inline-block;">Clientes</h1>
 
           <a href="novo_clientes.php" class="btn btn-primary" style="margin-left: 10px; margin-top: -10px;">Novo Cliente</a>
         </div>
@@ -55,6 +55,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                   <tr>
                     <th>ID</th>
                     <th>Nome</th>
+                    <th>CPF</th>
                     <th>Data de nascimento</th>
                     <th>Inicio da fidelidade</th>
                     <th>Cidade</th>
@@ -69,6 +70,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                     <tr>
                       <td><?php echo $clientes->id; ?></td>
                       <td><?php echo $clientes->nome; ?></td>
+                      <td><?php echo $clientes->cpf; ?></td>
                       <td><?php echo dataTela($clientes->data_nascimento); ?></td>
                       <td><?php echo dataTela($clientes->inicio_fidelidade); ?></td>
                       <td><?php echo $clientes->cidade; ?></td>

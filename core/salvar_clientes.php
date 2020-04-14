@@ -4,14 +4,16 @@ require_once 'conexao.php';
 session_start();
 
 $nome = $_POST['nome_cliente'];
+$cpf = $_POST['cpf'];
 $data_nascimento = $_POST['data_nascimento'];
 $inicio_fidelidade = $_POST['inicio_fidelidade'];
 $cidade = $_POST['cidade_cliente'];
 $bairro = $_POST['bairro_cliente'];
 $rua = $_POST['logradouro_cliente'];
 
-$salvar = $pdo->prepare('INSERT INTO clientes (nome, data_nascimento, inicio_fidelidade, cidade, bairro, rua) VALUES (:nome, :data_nascimento, :inicio_fidelidade, :cidade, :bairro, :rua)');
+$salvar = $pdo->prepare('INSERT INTO clientes (nome, cpf, data_nascimento, inicio_fidelidade, cidade, bairro, rua) VALUES (:nome, :cpf, :data_nascimento, :inicio_fidelidade, :cidade, :bairro, :rua)');
 $salvar->bindValue(':nome', $nome);
+$salvar->bindValue(':cpf', $cpf);
 $salvar->bindValue(':data_nascimento', $data_nascimento);
 $salvar->bindValue(':inicio_fidelidade', $inicio_fidelidade);
 $salvar->bindValue(':cidade', $cidade);

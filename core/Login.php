@@ -35,4 +35,6 @@ if ($logado) {
     break;
   }
 
+}else{
+	header('Location: ../login.php');
 }

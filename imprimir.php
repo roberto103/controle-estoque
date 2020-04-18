@@ -86,6 +86,7 @@ window.print();
                   <th>Valor</th>
                   <th>Número de Série</th>
                   <th>IMEI</th>
+                  <th>Garantia</th>
                 </tr>
               </thead>
               <tbody>
@@ -95,6 +96,11 @@ window.print();
                   <td>R$ <?php echo decimalTela($registros->valor_venda); ?></td>
                   <td><?php echo $registros->numero_serie; ?></td>
                   <td><?php echo $registros->imei; ?></td>
+                  <td>
+                    <span style="letter-spacing: 15px;">()</span> SIM
+                    <br>
+                    <span style="letter-spacing: 15px;">()</span> NÃO
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -142,6 +148,7 @@ window.print();
                   <th>Valor</th>
                   <th>Número de Série</th>
                   <th>IMEI</th>
+                  <th>Garantia</th>
                 </tr>
               </thead>
               <tbody>
@@ -151,6 +158,11 @@ window.print();
                   <td>R$ <?php echo decimalTela($registros->valor_venda); ?></td>
                   <td><?php echo $registros->numero_serie; ?></td>
                   <td><?php echo $registros->imei; ?></td>
+                  <td>
+                    <span style="letter-spacing: 15px;">()</span> SIM
+                    <br>
+                    <span style="letter-spacing: 15px;">()</span> NÃO
+                  </td>
                 </tr>
               </tbody>
             </table>

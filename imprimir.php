@@ -97,7 +97,8 @@ window.print();
                   <td><?php echo $registros->numero_serie; ?></td>
                   <td><?php echo $registros->imei; ?></td>
                   <td>
-                    <span style="letter-spacing: 15px;">()</span> SIM
+                    <span style="letter-spacing: 15px;">()</span> SIM, até:
+                    <span>___/___/______</span>
                     <br>
                     <span style="letter-spacing: 15px;">()</span> NÃO
                   </td>

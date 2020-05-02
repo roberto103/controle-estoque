@@ -38,13 +38,38 @@ $.widget.bridge('uibutton', $.ui.button)
 
 // Pega do botao e joga para campos no modal
 $(document).ready(function(){
-	$('#modal_vender').on('show.bs.modal', function (event) {
-		var button = $(event.relatedTarget); // Botão que acionou o modal
-		var id = button.data('id'); // Extrai informação dos atributos data-*
-		var modal = $(this);
+  $('#modal_vender').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Botão que acionou o modal
+    var id = button.data('id'); // Extrai informação dos atributos data-*
+    var modal = $(this);
 
-		modal.find('#id').val(id);
-	});
+    modal.find('#id').val(id);
+  });
+
+  // MES
+  $('#btMes').click(function(){
+
+    var mes = $("#mes").val();
+
+    $.ajax({
+      url: 'core/vendas_mensais.php',
+      type: 'POST',
+      data: {
+        mes: mes
+      },
+      success: function(data){
+        if (data == 1) {
+          $('#lista').html(data);
+        } else {
+          $('#lista').html(data);
+        }
+      }
+    });
+
+    return false;
+
+  }); // #btLogin
+
 });
 
 // mascaras de telefone e moedas

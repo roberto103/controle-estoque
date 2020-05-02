@@ -6,25 +6,9 @@
 
 require_once 'core/conexao.php';
 
-// Remove o ano da data e deixa só o mês, caso tenha escolhido uma data. Se não, a variavel recebe o valor do mês atual.
-if (isset($_POST['mes'])) {
-  $data = explode('-', $_POST['mes']);
-  $data_mes = $data[1];
-}else{
-  $data_mes = date('m');
-}
-
-// Retorna todos os registros de vendas do mês escolhido
-$sql = $pdo->prepare('SELECT * FROM produtos_vendidos WHERE MONTH(data_venda) = :data_venda');
-$sql->bindValue(':data_venda', $data_mes);
+$sql = $pdo->prepare('SELECT * FROM produtos_vendidos');
 $sql->execute();
 $registros = $sql->fetchAll(PDO::FETCH_OBJ);
-
-// Retorna soma dos lucros do mês escolhido
-$lucro = $pdo->prepare('SELECT SUM(lucro) AS lucro_total FROM produtos_vendidos WHERE MONTH(data_venda) = :data_venda');
-$lucro->bindValue(':data_venda', $data_mes);
-$lucro->execute();
-$lucro_total = $lucro->fetch(PDO::FETCH_OBJ);
 
 ?>
 
@@ -66,15 +50,6 @@ $lucro_total = $lucro->fetch(PDO::FETCH_OBJ);
           <div class="card">
             <div class="card-body">
 
-              <form action="" method="post">
-                <div class="row mb-3">
-                  <div class="col">
-                    <input id="mes" name="mes" type="month" class="form-control" required>
-                  </div>
-                  <button type="submit" class="btn btn-primary">Filtrar</button>
-                </div>
-              </form>
-
               <table id="example2" class="table table-bordered table-hover table-responsive">
                 <thead>
                   <tr>
@@ -92,7 +67,7 @@ $lucro_total = $lucro->fetch(PDO::FETCH_OBJ);
                     <th>Estornar</th>
                   </tr>
                 </thead>
-                <tbody class="lista">
+                <tbody>
 
                   <?php foreach ($registros as $produtos): ?>
                     <tr>
@@ -118,7 +93,7 @@ $lucro_total = $lucro->fetch(PDO::FETCH_OBJ);
                 </tbody>
 
               </table>
-              <b class="text-success">Lucro: R$ <?php echo $lucro_total->lucro_total; ?></b>
+              <span class="text-success">Lucro: R$ 100,00</span>
             </div>
             <!-- /.card-body -->
           </div>

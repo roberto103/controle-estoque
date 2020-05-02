@@ -48,7 +48,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
 
           <div class="card">
             <div class="card-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="example2" class="table table-bordered table-hover table-responsive">
                 <thead>
                   <tr>
                     <th>ID</th>

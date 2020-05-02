@@ -61,6 +61,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                     <th>Data da compra</th>
                     <th>Data da venda</th>
                     <th>Vendedor</th>
+                    <th>Cliente</th>
                     <th>Estornar</th>
                   </tr>
                 </thead>
@@ -78,6 +79,7 @@ $registros = $sql->fetchAll(PDO::FETCH_OBJ);
                       <td><?php echo dataTela($produtos->data_compra); ?></td>
                       <td><?php echo dataTela($produtos->data_venda); ?></td>
                       <td><?php echo $produtos->vendedor; ?></td>
+                      <td><?php echo $produtos->cliente; ?></td>
                       <td class="text-center">
                         <a href="core/estornar.php?id=<?php echo $produtos->id; ?>" title="Estornar" style="font-size: 20px;">
                           <i class="fas fa-retweet"></i>

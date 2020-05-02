@@ -46,30 +46,6 @@ $(document).ready(function(){
     modal.find('#id').val(id);
   });
 
-  // MES
-  $('#btMes').click(function(){
-
-    var mes = $("#mes").val();
-
-    $.ajax({
-      url: 'core/vendas_mensais.php',
-      type: 'POST',
-      data: {
-        mes: mes
-      },
-      success: function(data){
-        if (data == 1) {
-          $('#lista').html(data);
-        } else {
-          $('#lista').html(data);
-        }
-      }
-    });
-
-    return false;
-
-  }); // #btLogin
-
 });
 
 // mascaras de telefone e moedas

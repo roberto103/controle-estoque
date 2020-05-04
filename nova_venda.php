@@ -116,10 +116,10 @@ $clientes = $buscar->fetchAll(PDO::FETCH_OBJ);
           <div class="row mb-5 mt-4">
             <div class="col">
               <label>Selecione um cliente</label>
-              <select name="cliente" class="form-control">
+              <select name="id_cliente" class="form-control">
                 <option disabled>Selecione um cliente</option>
                 <?php foreach ($clientes as $cliente): ?>
-                  <option value="<?php echo $cliente->nome; ?>"><?php echo $cliente->nome; ?></option>
+                  <option value="<?php echo $cliente->id; ?>"><?php echo $cliente->nome; ?></option>
                 <?php endforeach; ?>
               </select>
             </div>

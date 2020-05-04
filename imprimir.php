@@ -54,127 +54,69 @@ window.print();
       <div class="container">
         <div class="row">
 
-          <!-- parte 1 -->
-          <div class="col-sm-12 pt-5">
+          <!-- Looping para duplicar o comprovante de compra -->
+          <?php for ($i=0; $i < 2; $i++) { ?>
+            <div class="col-sm-12 pt-5">
 
-            <!-- logo -->
-            <div class="row mb-4">
-              <div class="col">
-                <img src="img/logo.png" alt="BR iPhones" width="110px">
-              </div>
-            </div>
-
-            <!-- informações -->
-            <div class="row">
-              <div class="col" style="margin-bottom: 35px;">
-                <h5 class="d-block">Cliente: <?php echo $registros->cliente; ?></h5>
-                <h5 class="d-block">Vendedor: <?php echo $registros->vendedor; ?></h5>
+              <!-- logo -->
+              <div class="row mb-4">
+                <div class="col">
+                  <img src="img/logo.png" alt="BR iPhones" width="110px">
+                </div>
               </div>
 
-              <div class="col text-right" style="margin-bottom: 35px;">
-                <h5 class="d-block">Data da venda: <?php echo dataTela($registros->data_venda); ?></h5>
-                <h5 class="d-block">ID da venda: <?php echo $registros->id; ?></h5>
-              </div>
-            </div>
+              <!-- informações -->
+              <div class="row">
+                <div class="col" style="margin-bottom: 35px;">
+                  <h5 class="d-block">Cliente: <?php echo $registros->cliente; ?></h5>
+                  <h5 class="d-block">CPF: <?php echo $_SESSION['cpf_cliente']; ?></h5>
+                  <h5 class="d-block">Vendedor: <?php echo $registros->vendedor; ?></h5>
+                </div>
 
-            <!-- produtos -->
-            <table class="table table-bordered mb-5">
-              <thead>
-                <tr>
-                  <th>Produto</th>
-                  <th>Estado</th>
-                  <th>Valor</th>
-                  <th>Número de Série</th>
-                  <th>IMEI</th>
-                  <th>Garantia</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><?php echo $registros->modelo; ?></td>
-                  <td><?php echo $registros->estado_produto; ?></td>
-                  <td>R$ <?php echo decimalTela($registros->valor_venda); ?></td>
-                  <td><?php echo $registros->numero_serie; ?></td>
-                  <td><?php echo $registros->imei; ?></td>
-                  <td>
-                    <span style="letter-spacing: 15px;">()</span> SIM, até:
-                    <span>___/___/______</span>
-                    <br>
-                    <span style="letter-spacing: 15px;">()</span> NÃO
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="text-center mb-5">
-              <span class="d-block mb-4">Assinatura do comprador:</span>
-              <span>_________________________________________________</span>
-              <span class="d-block mb-4">Assinatura do vendedor:</span>
-              <span class="mt-4">_________________________________________________</span>
-            </div>
-          </div>
-
-          <div id="hr"></div>
-
-          <!-- =========================================================================================== -->
-          <!-- parte 2 -->
-          <div class="col-sm-12 pt-5">
-
-            <!-- logo -->
-            <div class="row mb-4">
-              <div class="col">
-                <img src="img/logo.png" alt="BR iPhones" width="110px">
-              </div>
-            </div>
-
-            <!-- informações -->
-            <div class="row">
-              <div class="col" style="margin-bottom: 35px;">
-                <h5 class="d-block">Cliente: <?php echo $registros->cliente; ?></h5>
-                <h5 class="d-block">Vendedor: <?php echo $registros->vendedor; ?></h5>
+                <div class="col text-right" style="margin-bottom: 35px;">
+                  <h5 class="d-block">Data da venda: <?php echo dataTela($registros->data_venda); ?></h5>
+                  <h5 class="d-block">ID da venda: <?php echo $registros->id; ?></h5>
+                </div>
               </div>
 
-              <div class="col text-right" style="margin-bottom: 35px;">
-                <h5 class="d-block">Data da venda: <?php echo dataTela($registros->data_venda); ?></h5>
-                <h5 class="d-block">ID da venda: <?php echo $registros->id; ?></h5>
+              <!-- produtos -->
+              <table class="table table-bordered mb-5">
+                <thead>
+                  <tr>
+                    <th>Produto</th>
+                    <th>Estado</th>
+                    <th>Valor</th>
+                    <th>Número de Série</th>
+                    <th>IMEI</th>
+                    <th>Garantia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><?php echo $registros->modelo; ?></td>
+                    <td><?php echo $registros->estado_produto; ?></td>
+                    <td>R$ <?php echo decimalTela($registros->valor_venda); ?></td>
+                    <td><?php echo $registros->numero_serie; ?></td>
+                    <td><?php echo $registros->imei; ?></td>
+                    <td>
+                      <span style="letter-spacing: 15px;">()</span> SIM, até:
+                      <span>___/___/______</span>
+                      <br>
+                      <span style="letter-spacing: 15px;">()</span> NÃO
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="text-center mb-5">
+                <span class="d-block mb-4">Assinatura do comprador:</span>
+                <span>_________________________________________________</span>
+                <span class="d-block mb-4">Assinatura do vendedor:</span>
+                <span class="mt-4">_________________________________________________</span>
               </div>
             </div>
-
-            <!-- produtos -->
-            <table class="table table-bordered mb-5">
-              <thead>
-                <tr>
-                  <th>Produto</th>
-                  <th>Estado</th>
-                  <th>Valor</th>
-                  <th>Número de Série</th>
-                  <th>IMEI</th>
-                  <th>Garantia</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><?php echo $registros->modelo; ?></td>
-                  <td><?php echo $registros->estado_produto; ?></td>
-                  <td>R$ <?php echo decimalTela($registros->valor_venda); ?></td>
-                  <td><?php echo $registros->numero_serie; ?></td>
-                  <td><?php echo $registros->imei; ?></td>
-                  <td>
-                    <span style="letter-spacing: 15px;">()</span> SIM
-                    <br>
-                    <span style="letter-spacing: 15px;">()</span> NÃO
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <div class="text-center">
-              <span class="d-block mb-4">Assinatura do comprador:</span>
-              <span class="mt-4">_________________________________________________</span>
-              <span class="d-block mb-4">Assinatura do vendedor:</span>
-              <span>_________________________________________________</span>
-            </div>
-          </div>
+            <div id="hr"></div>
+          <?php } ?>
 
         </div>
       </div>

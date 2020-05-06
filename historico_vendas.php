@@ -118,7 +118,7 @@ $lucro_total = $lucro->fetch(PDO::FETCH_OBJ);
                 </tbody>
 
               </table>
-              <b class="text-success">Lucro: R$ <?php echo $lucro_total->lucro_total; ?></b>
+              <b class="text-success">Lucro: R$ <?php echo decimalTela($lucro_total->lucro_total); ?></b>
             </div>
             <!-- /.card-body -->
           </div>

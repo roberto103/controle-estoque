@@ -50,8 +50,8 @@
               <div class="form-group">
                 <label>Permissão do usuário</label>
                 <select name="permissao" class="form-control">
-                  <option value="Admin">Administrador</option>
-                  <option value="Funcionário">Funcionário</option>
+                  <option value="1">Administrador</option>
+                  <option value="2">Funcionário</option>
                 </select>
               </div>
             </div>

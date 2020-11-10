@@ -14,7 +14,7 @@ $logado = $handler->rowCount();
 if ($logado) {
   // Nivel de acesso
   switch ($administrador->permissao) {
-    case 'Admin':
+    case 1:
       session_start();
       $_SESSION['email_admin'] = $administrador->email;
       $_SESSION['nome'] = $administrador->nome;
@@ -24,7 +24,7 @@ if ($logado) {
       header('Location: ../index.php');
     break;
 
-    case 'Funcionário':
+    case 2:
       session_start();
       $_SESSION['email_funcionario'] = $administrador->email;
       $_SESSION['nome'] = $administrador->nome;

@@ -2,7 +2,7 @@
 
 require_once 'conexao.php';
 
-$handler = $pdo->prepare('SELECT * FROM usuarios WHERE email=:email AND senha=:senha');
+$handler = $pdo->prepare('SELECT * FROM usuarios WHERE email = :email AND senha = :senha');
 
 $handler->bindValue(':email', $_POST['email']);
 $handler->bindValue(':senha', $_POST['senha']);
@@ -36,5 +36,8 @@ if ($logado) {
   }
 
 }else{
-	header('Location: ../login.php');
+	echo "<script>
+			alert('Email ou senha incorretos!');
+			location.href = '../login.php';
+		</script>";
 }
